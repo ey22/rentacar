@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            img{
+                position:relative;
+                top: 200px;
+                left: 3px;
+            }
+            .logoImage{
+                position: absolute;
+                left: 10px;
+                top:1px;
+            }
+            .title{
+                position: absolute;
+                background-color: rgb(204, 153, 102,0.3);
+                color:black;
+                left: 0; 
+                width: 100%; 
+                height: 100%;
+                top:10px;
+                align-items: center;
+            } 
+            .white{
+                position: absolute;
+                background-color: white;
+                width: 100%; 
+                height: 15%;
+                left:0;
+                top:0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+            }
+            .login-signin-container{
+                position: relative;
+                height: 2cm;
+                width: 5cm;
+                right:2cm;
+                background-color:rgb(203, 163, 123) ;
+                border: 10px;
+                font-size:x-large;
+                border-style:inset;
+                font-weight: 600;
+                border-radius: 10px; 
+                cursor: pointer;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .dropdown{
+                position: absolute;
+                top: 100%; 
+                left: 0;
+                width: 100%;
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                opacity: 0; 
+                transform: translateY(-10px); 
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .login-signin-container:hover .dropdown{
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .login-signin-button{
+                width: 5cm;
+                height: 2cm;
+                background-color: rgba(204, 153, 102,0.3);
+                font-size: large;
+                font-weight: 600;            
+            }
+            h2{
+                position: absolute;
+                font-size: 3.5em;
+                font-weight:700;
+                right: 40px;
+                top:30%;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                line-height: 1.5; 
+                max-width: 400px;
+                color: #252424;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+            }
+            
+        </style>
+        <link rel="icon" href="images/car_icon.png">
+    </head>
+    <body>
+       <img src= "./images/Main Photo.webp" alt="car photo" style= "width:1000px;height:600px"> 
+       
+       <div class="title"> 
+        <h2>BOOK AND<br> DRIVE,<br>FEEL ALIVE!</h2>
+        </div>
+
+        <div class="white">
+            <h1></h1>
+            <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 3.2cm;height:3.2cm;">
+            <div class="login-signin-container">Log in/Sign in
+            <div class="dropdown">
+                <button class="login-signin-button" type="button" onclick="window.location.href='LoginPage.html';" >Log in</button>
+                <button class="login-signin-button" type="button" onclick="window.location.href='SigninPage.html';" >Sign in</button>
+            </div>
+            </div> 
+            
+        </div>
+
+
+       
+    </body>
+</html>
+
+
+
+
+
+ 
