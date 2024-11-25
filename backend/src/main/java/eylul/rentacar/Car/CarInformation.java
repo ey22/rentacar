@@ -1,4 +1,4 @@
-package Car;
+package eylul.rentacar.Car;
 import jakarta.persistence.*;
 
 @Entity

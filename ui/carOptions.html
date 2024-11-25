@@ -2,16 +2,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        
         <meta charset="UTF-8">
-        <style>
 
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+        <style>
         .logoImage{
             position: absolute;
             left: 10px;
             top:1px;
         }
         .title{
+            display: flex;
             position: absolute;
             background-color: rgb(204, 153, 102,0.3);
             color:black;
@@ -19,6 +24,7 @@
             width: 100%; 
             height: 100%;
             align-items: center;
+            
         } 
         .white{
             position: absolute;
@@ -91,8 +97,9 @@
             font-weight: 400;
         }
         .whiteBackgroundOfCarTables{
+            top: 4cm;
             position: relative;
-            top: 20%;
+            overflow: visible;
             width: 100%;
             height: auto;
             left:0;
@@ -102,15 +109,17 @@
             gap: 1rem; 
             padding: 1rem;
             flex-direction: column;  
+            margin-top: 0;
         }
         .filterSection {
-            display: flex;
+            position: relative;
             justify-content: flex-start;
             align-items: center;
             gap: 1rem; 
             padding-bottom: 1rem;
             border-bottom: 1px solid #ccc; 
-            margin-bottom: 1rem;
+            margin-top:1cm;
+            margin-bottom: 5rem; 
         }
         .carBox {
             display: flex;
@@ -165,7 +174,6 @@
             align-items: center;
             justify-content: center;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            
         }
        
         .stepper {
@@ -206,17 +214,11 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
         }
 
         .stepContent.active {
             display: block;
-        }
-
-        /* Location Selection alanı */
-        .locationSelection {
-            margin: 1rem 0;
         }
 
         .selectionLabel {
@@ -225,13 +227,72 @@
             font-weight: bold;
         }
         #locationSelection {
-            padding: 0.5rem;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            width: 100%;
-            font-size: 1rem;
+            padding: 0.7rem;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            width: 55%;
+            height: 1.5cm;
+            font-size: large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            margin-top: 0.5rem;
         }
+
+        #boxInFirstStep{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 10cm;
+            width: 25cm;
+            background-color:rgb(206, 174, 142);
+            border: 6px;
+            border-style:inset;
+            border-radius: 10px; 
+            cursor: pointer;
+            align-items: center;
+            top:10%;
+            left:20%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            font-size: x-large;
+            padding: 1rem;
+        }
+        .locationSelectionBoxInFirstStepBox{
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: flex-start; 
+            gap: 0.5rem; 
+            width: 55%;
+        }
+        .dateSelectionBoxInFirstStepBox{   
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: flex-start; 
+            gap: 0.5rem;
+            width: 55%; 
+        }
+        #dateSelectionButton {
+            display: flex;
+            align-items: center; 
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            font-size: large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            margin-top: 0.5rem;
+            width: 55%;
+            height: 1.5cm;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .button-icon{
+            width: 20px;
+            height: 20px;
+        }
+         
         .noCarMessage {
+            position: relative;
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
@@ -239,20 +300,188 @@
             margin-top: 3rem;
             padding: 1rem;
             background-color: #ffe6e6; 
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid #ff9999;
             width: 85%; 
             margin-left: auto;
             margin-right: auto;
-            top:20cm;
+            top:3cm;
         }
+        .box1, .box2, .box3{
+            float:left;
+            width: 25%;
+            height: 10cm;
+            margin-top: 8cm;
+            margin-left: 2cm;
+            background-color:white;
+            border: 6px;
+            border-style:inset;
+            border-radius: 10px; 
+            cursor: pointer;
+
+        }
+        #extrasPage{
+            flex-direction: column;
+            display: flex;
+            position: relative;
+            background-color: white;
+            width: 100%;
+            height: 50%;
+            top:50%;
+            align-items: center;
+            
+        }
+        #extrasPage h1{
+            position: absolute;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:xx-large;
+            font-weight: 600;
+            top:5cm;
+            left:2cm;
+            
+        }
+        #extrasPage h2{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:xx-large;
+            font-weight: 400;
+            margin-left:1cm;
+        }
+        .icon{
+            position: relative;
+            height: 30px;
+            width: 30px;
+            top:8px;
+        }
+        .protectionPrice{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:xx-large;
+            font-weight: 400;
+            margin-left:1cm;
+        }
+        .selectButtonForProtection{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+            font-weight: 500;
+            background-color: rgb(204, 153, 102,0.3);
+            border-radius: 10px;
+            width: 3cm;
+            height: 1cm;
+        }
+        #step2 p{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:smaller;
+        }
+        .totalPriceBox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: rgb(204, 153, 102,0.3);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 200px;
+        }
+
+        .totalPriceBox h2 {
+            font-size: 16px;
+            margin: 0;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        .totalPriceBox p {
+            font-size: 20px;
+            margin: 0;
+            font-weight: normal;
+        }
+       
+        #daterangeInput {
+            margin-top: 10px;
+            font-size: 16px;
+            width: 7cm;
+            max-width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 0.7rem;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+        }
+       .dateSelectionBoxInFirstStepBox img{
+            margin-top: 15px;
+       }
+       .next-button{
+        position: absolute;
+            width: 4cm;
+            height: 1cm;
+            background-color: #fff; 
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            bottom: 0.5cm;
+            right: 0.5cm;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
         </style>
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
         <div class="title">
-            <div id="carContainer" class="whiteBackgroundOfCarTables">  
-                <div class="filterSection">
+            <div class="boxInFirstStep" id="boxInFirstStep">
+                <div class="locationSelectionBoxInFirstStepBox">
+                    <label for="locationSelection">Pick up & Return location </label>
+                    <select id="locationSelection">
+                        <option value="" selected disabled>Select a location</option>
+                        <option value="Istanbul">📍 Istanbul</option>
+                        <option value="Berlin">📍 Berlin</option>
+                        <option value="Paris">📍 Paris</option>
+                        <option value="Roma">📍 Roma</option>
+                    </select>
+                </div>
+         
+                <div class="dateSelectionBoxInFirstStepBox" id="dateSelectionBoxInFirstStepBox">
+                    <label for="dateSelection">Pick up date</label>
+                    
+                    <div>
+                        <input type="text" name="daterange" id="daterangeInput" placeholder="Select Date Range">
+                        <img src="https://img.icons8.com/?size=100&id=23&format=png&color=000000" style="float:inline-start" width="30" height="30">
+                    </div>                    
+
+                </div>
+                    <button class="next-button" type="button" onclick="handleLocationSelection()">Next</button>
+                </div>
+
+                        <script>
+                            var days;
+                            document.addEventListener("DOMContentLoaded", function () {
+                            const dateRangeInput = document.getElementById("daterangeInput");
+
+                            $(dateRangeInput).daterangepicker({
+                                opens: 'left', 
+                                locale: {
+                                    format: 'MM/DD/YYYY' 
+                                }
+                            });
+                            
+                            $(dateRangeInput).on('apply.daterangepicker', function (ev, picker) {
+                                days = picker.endDate.diff(picker.startDate, 'days') + 1; 
+                                console.log("x:" + days);
+                                
+                            });
+                        });
+
+                        </script>
+                      
+                    
+                </div>
+                
+            </div>
+            <div id="carContainer" class="whiteBackgroundOfCarTables" style="display: none;">  
+                <div class="filterSection" id="filterSection">
                     <div class="brandFilter">
                         <label for="brandFilter"></label>
                         <select id="brandFilter" onchange="filterCars()" >
@@ -280,8 +509,6 @@
                     There are no cars with the desired specifications. Please try different filters.
                 </div>
                 </div> 
-                <div id="extrasContainer" style="display: none;"></div>
-
             </div>        
 
         </div>         
@@ -289,20 +516,12 @@
             <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 3.2cm;height:3.2cm;">
 
             <div class="stepper">
-                <div class="stepBox" id="step1">
-                    <label for="locationSelection" class="stepLabel">Step 1: Location Selection</label>
-                    <select id="locationSelection" class="stepSelect" onchange="handleLocationSelection()">
-                        <option value="" selected disabled>Select a location</option>
-                        <option value="Istanbul">📍 Istanbul</option>
-                        <option value="Berlin">📍 Berlin</option>
-                        <option value="Paris">📍 Paris</option>
-                        <option value="Roma">📍 Roma</option>
-                    </select>
+                <div class="stepBox" id="step1" onclick="switchStep(1)">
+                    Step 1: Location Selection
                 </div>
             
                 <div class="stepBox" id="step2" onclick="switchStep(2)">
                     Step 2: Car Selection
-                    
                 </div>
             
                 <div class="stepBox" id="step3" onclick="switchStep(3)">
@@ -310,42 +529,50 @@
                 </div>
             </div>
         </div>
+        <div class="extrasPage" id="extrasPage">
+            <h1>Protection Plans</h1>
+           
+        </div>
 
                 <script>
+ 
                     function handleLocationSelection() {
                         const location = document.getElementById("locationSelection").value;
 
                         if (location) {
                             switchStep(2);
                             loadCars();
+                            document.getElementById("filterSection").style.display = "block";
                         }
                     }
+
                     async function switchStep(stepNumber) {
-                        
                         const stepBoxes = document.querySelectorAll(".stepBox");
                         stepBoxes.forEach(box => box.classList.remove("active"));
 
                         const currentStep = document.getElementById(`step${stepNumber}`);
-                        if (!currentStep) {
-                            console.error(`ID 'step${stepNumber}' bulunamadı.`);
-                            return; 
-                        }
+                        
                         currentStep.classList.add("active");
 
                         if (stepNumber === 1) {
+                            document.getElementById("extrasPage").style.display = "none"; 
                             document.getElementById("carContainer").style.display = "none";
-                            document.getElementById("filterSection").style.display = "block";
-                            document.getElementById("extrasContainer").style.display = "none";
-                        } else if (stepNumber === 2) {
-                            document.getElementById("carContainer").style.display = "block";
                             document.getElementById("filterSection").style.display = "none";
-                            loadCars(); 
+                            document.getElementById("extrasContainer").style.display = "none";
+                            document.getElementById("boxInFirstStep").style.display="block";
+                        } else if (stepNumber === 2) {
+                            document.getElementById("extrasPage").style.display = "none";
+                            document.getElementById("carContainer").style.display = "block";
+                            document.getElementById("boxInFirstStep").style.display = "none";
+                            document.getElementById("extrasContainer").style.display = "none";
                         } else if (stepNumber === 3) {
                             document.getElementById("carContainer").style.display = "none";
-                            document.getElementById("extrasContainer").style.display = "block";
+                            document.getElementById("extrasPage").style.display = "block";
+                            loadExtras();
+                            
                         }
                     }
-                    
+                    var varPrice=0;
                     async function filterCars() {
                     const brand = document.getElementById("brandFilter").value || "All";;
                     const transmission = document.getElementById("transmissionFilter").value || "All";;
@@ -362,6 +589,8 @@
                         if (cars.length === 0) {
                             const noCarMessage = document.getElementById("noCarMessage");
                             noCarMessage.style.display = "block";
+                           
+
                         } else {
                             noCarMessage.style.display = "none"; 
                             cars.forEach(car => {
@@ -378,7 +607,7 @@
                                         </div>
                                         <div class="carPrice">
                                             <p>${car.price} €/day</p>
-                                            <button class="selectButton" id="selectButton" onclick="switchStep(3)">SELECT</button>
+                                        <button class="selectButton" id="selectButton" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}')">SELECT</button>
                                         </div>
                                     
                                 `;
@@ -392,8 +621,11 @@
                     console.error("Error:", err);
                 }
             }
-      
+            
             async function loadCars() {
+                if (document.getElementById("carContainer").style.display !== "block") {
+                    return;
+                }
                 try {
                     const response = await fetch("http://localhost:8080/cars");
                     if (response.ok) {
@@ -407,7 +639,6 @@
                             cars.forEach(car => {
                             const carBox = document.createElement("div");
                             carBox.className = "carBox";
-
                             carBox.innerHTML = `
                                 <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
                                 <div class="carInformation">
@@ -418,7 +649,8 @@
                                     </div>
                                     <div class="carPrice">
                                         <p>${car.price} €/day</p>
-                                        <button class="selectButton" onclick="switchStep(3)">SELECT</button>
+                                        <button class="selectButton" id="selectButton" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}')">SELECT</button>
+                                        
                                     </div>
                                 
                             `;
@@ -431,11 +663,126 @@
                 }catch (err) {
                     console.error("Error:", err);
                 }
-            
             }
-         </script>   
 
+            let selectedCar = null; 
+
+            function handleSelection(brand, name, price){
+                varPrice=0;
+                const selectedCar = `${brand} ${name}`;
+                selectCar(selectedCar);
+                calculatePrice(price);
+            }
+
+            function selectCar(carName) {
+                selectedCar = carName; 
+                document.getElementById("step2").innerHTML = `
+                    Step 2: Car Selection
+                    <p>${selectedCar}</p>
+                `;
+                switchStep(3); 
+
+            }
+            function calculatePrice(price){
+                varPrice+=price*days;
+                console.log(varPrice);
+
+            }
+            /*function addExtraPriceToTotal(extraPrice){
+                console.log(extraPrice);
+                calculatePrice(e)
+            }
+            */
+            async function loadExtras(){
+                try {
+                    const response = await fetch("http://localhost:8080/plans");
+                    if (response.ok) {
+                        const extras = await response.json();
+
+                        const extrasPage = document.getElementById("extrasPage");
+                        
+                        extrasPage.innerHTML = `
+                            <h1>Protection Plans</h1>
+                             <div class="totalPriceBox" id="totalPriceBox">
+                                <h2>Total Price</h2>
+                                <p id="totalPrice">${varPrice} €</p>
+                            </div>
+                        `;
+                        extras.forEach((extra, index) => {
+                        const extrasBox = document.createElement("div");
+                        extrasBox.className = `box${index + 1}`; 
+                        let boxContent = `
+                            <h2>${extra.planType}</h2>
+                            <p>
+                            <img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
+                            Collision Damage Protection
+                        </p>
+                        `;
+                                if(extra.windscreenGlassTyresProtection==false && extra.keyAndLicenceAssurance==false){
+                                    boxContent+= ` 
+                                    <p>
+                                        <img src="https://img.icons8.com/?size=100&id=fYgQxDaH069W&format=png&color=000000" alt="icon" class="icon">
+                                        Windscreen Glass Tyres Protection
+                                        <br><br><img src="https://img.icons8.com/?size=100&id=fYgQxDaH069W&format=png&color=000000"alt="icon" class="icon">
+                                        Key And Licence Assurance
+                                        </p>
+                                        `;
+                                        if(extra.price==null){
+                                            boxContent+= ` 
+                                            <div class="protectionPrice">
+                                                <p>Included</p>
+                                                 </div>
+                                            `;
+                                        }
+                                }else if(extra.windscreenGlassTyresProtection==true && extra.keyAndLicenceAssurance==false){
+                                    boxContent+= ` 
+                                    <p>
+                                        <img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
+                                        Windscreen Glass Tyres Protection
+                                        <br><br> <img src="https://img.icons8.com/?size=100&id=fYgQxDaH069W&format=png&color=000000"alt="icon" class="icon">
+                                        Key And Licence Assurance
+                                         <div class="protectionPrice">
+                                                <p>${extra.price} €/day</p>
+                                                 <button class="selectButtonForProtection" onclick="calculatePrice(${extra.price})"> Select </button>
+                                                 </div>
+                                        </p>
+                                        `;
+                                }
+                                else{
+                                    boxContent+= `
+                                     <p>
+                                         <img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
+                                        Windscreen Glass Tyres Protection
+                                        <br><br><img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
+                                        Key And Licence Assurance
+                                        <div class="protectionPrice">
+                                                <p>${extra.price} €/day</p>
+                                                 <button class="selectButtonForProtection" onclick="calculatePrice(${extra.price})"> Select </button>
+                                                 </div>
+                                        </p>
+                                        `;
+                                }
+                                extrasBox.innerHTML = boxContent;
+                                extrasPage.appendChild(extrasBox);
+
+                            })
+                                
+                        }
+                
+                        
+                    else {
+                        console.error("Failed to fetch extras:", response.statusText);
+                    }
+                } catch (err) {
+                    console.error("Error:", err);
+                }
+            };
+
+         </script>   
         </div> 
+        <script>
+            switchStep(1);
+        </script>
         
             
        
