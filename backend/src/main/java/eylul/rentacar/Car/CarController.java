@@ -39,8 +39,6 @@ public class CarController {
         return ResponseEntity.ok(cars);
     }
 
-
-
     @PostMapping("")
     public ResponseEntity<CarInformation> createCar(@RequestBody CarInformation car) {
         CarInformation createdCar = carService.createCar(car);

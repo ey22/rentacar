@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <meta charset="UTF-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -38,9 +38,65 @@
             justify-content: space-between;
             padding: 0 20px;
         }
+        .menuButton {
+            position: absolute; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            width: 10%; 
+            height: 60%;
+            background-color: white; 
+            border: 2px solid #ccc; 
+            border-radius: 10%; 
+            cursor: pointer;
+            padding: 0; 
+            overflow: hidden; 
+            right: 3%;
+            font-size: large;
+            font-weight: 500;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            top: 20%;
+        }
+        
+        .menuButton:active {
+            transform: scale(0.9); 
+            background-color: #f0f0f0;
+        }
+        .sideNavigation {
+            height: 100%; 
+            width: 0; 
+            position: fixed; 
+            background-color: white; 
+            overflow-x: hidden; 
+            padding-top: 60px; 
+            transition: 0.5s; 
+            right: 0;
+            top: 0;
+            z-index: 1;
+            align-items: center;
+        }
+        .sideNavigation a{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 35px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .sideNavigation a:hover {
+            color: black;
+        }
+        .sideNavigation .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
         .brandFilter{
             position: absolute;
-            left:3cm;
+            left:8cm;
             top:0;
             display: flex;
             background-color: white;
@@ -69,7 +125,7 @@
         }
         .transmissionFilter{
             position: absolute;
-            left:10cm;
+            left:15cm;
             top:0;
             display: flex;
             background-color: white;
@@ -121,6 +177,30 @@
             margin-top:1cm;
             margin-bottom: 5rem; 
         }
+        .car-selection-next-button{
+            position: absolute;
+            width: 4cm;
+            height: 1cm;
+            background-color: rgb(204, 153, 102,0.3);           
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            top:0.5cm;
+            right: 0.5cm;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+       .car-selection-back-button{
+            position: absolute;
+            width: 4cm;
+            height: 1cm;
+            background-color: rgb(204, 153, 102,0.3);           
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            top:0.5cm;
+            left: 0.5cm;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
         .carBox {
             display: flex;
             align-items: center;
@@ -156,8 +236,7 @@
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: 600;
             margin-left: auto;
-            flex-direction: column;
-            
+            flex-direction: column;  
         }
         .selectButton{
             height: 2cm;
@@ -165,7 +244,7 @@
             background-color:rgb(203, 163, 123) ;
             border: 10px;
             font-size:x-large;
-            border-style:inset;
+            border-style:ridge;
             font-weight: 500;
             border-radius: 10px; 
             cursor: pointer;
@@ -173,9 +252,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;      
         }
-       
+        .selectButton:focus {
+            background-color: #ff9900;
+            color: white;
+            outline: none;
+        }
         .stepper {
             display: flex;
             justify-content: space-around;
@@ -230,7 +313,7 @@
             padding: 0.7rem;
             border-radius: 8px;
             border: 2px solid #ccc;
-            width: 55%;
+            width: 50%;
             height: 1.5cm;
             font-size: large;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
@@ -243,18 +326,18 @@
             flex-direction: row;
             justify-content: space-between;
             height: 10cm;
-            width: 25cm;
+            width: 30cm;
             background-color:rgb(206, 174, 142);
             border: 6px;
             border-style:inset;
             border-radius: 10px; 
             cursor: pointer;
             align-items: center;
-            top:10%;
-            left:20%;
+            top:8%;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             font-size: x-large;
             padding: 1rem;
+            margin: auto;
         }
         .locationSelectionBoxInFirstStepBox{
             display: flex;
@@ -262,7 +345,7 @@
             justify-content: center;
             align-items: flex-start; 
             gap: 0.5rem; 
-            width: 55%;
+            width: 50%;
         }
         .dateSelectionBoxInFirstStepBox{   
             display: flex;
@@ -270,7 +353,7 @@
             justify-content: center;
             align-items: flex-start; 
             gap: 0.5rem;
-            width: 55%; 
+            width: 50%; 
         }
         #dateSelectionButton {
             display: flex;
@@ -281,7 +364,7 @@
             font-size: large;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             margin-top: 0.5rem;
-            width: 55%;
+            width: 50%;
             height: 1.5cm;
             gap: 10px;
             cursor: pointer;
@@ -364,9 +447,40 @@
             font-weight: 500;
             background-color: rgb(204, 153, 102,0.3);
             border-radius: 10px;
-            width: 3cm;
+            width: 2cm;
             height: 1cm;
+           
+
+        }.selectButtonForProtection:focus{
+            background-color: #ff9900;
         }
+        
+        .complete-reservation-button{
+            position: relative;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+            font-weight: 600;
+            background-color: rgb(204, 153, 102,0.3);
+            border-radius: 10px;
+            width: auto;
+            height: 1.5cm;
+            bottom:1.5cm;
+            left: 80%;
+        }
+        .back-button-in-review{
+            position: absolute;
+            bottom:2cm;
+            right: 85%;
+            width: 4cm;
+            height: 1cm;
+            background-color: #fff; 
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+
         #step2 p{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:smaller;
@@ -374,7 +488,7 @@
         .totalPriceBox {
             position: absolute;
             top: 1rem;
-            right: 1rem;
+            right: 5cm;
             padding: 1rem;
             border: 2px solid #ccc;
             border-radius: 8px;
@@ -414,7 +528,7 @@
             margin-top: 15px;
        }
        .next-button{
-        position: absolute;
+            position: absolute;
             width: 4cm;
             height: 1cm;
             background-color: #fff; 
@@ -425,17 +539,141 @@
             right: 0.5cm;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
        }
+       .next-button-in-extras{
+            position: absolute;
+            width: 4cm;
+            height: 1cm;
+            background-color: #fff; 
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            top: 19cm;
+            right:2cm;
+       }
+       .back-button-in-extras{
+            position: absolute;
+            width: 4cm;
+            height: 1cm;
+            background-color: #fff; 
+            border-radius: 20px;
+            font-size: x-large;
+            font-weight: 600;  
+            top: 19cm;
+            left:2cm;
+       }
 
+       #whiteBackgroundOfReview{
+        top: 4cm;
+        position: relative;
+        overflow: visible;
+        width: 100%;
+        height: auto;   
+        left:0;
+        background-color: white;
+        flex-wrap: wrap;            
+        display: flex;
+        gap: 1rem; 
+        padding: 1rem;
+        flex-direction: column;  
+        margin-top: 0;
+       }
+       
+       .reviewInformation {
+        font-size: 16px;
+        color: black;
+        flex-direction: row;
+        line-height: 0.4cm;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+
+        }
+        .boxInReviewPage{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 15cm;
+        width: 10cm;
+        background-color: rgb(204, 153, 102,0.3);
+        border: 1px;
+        border-style:inset;
+        border-radius: 8px; 
+        cursor: pointer;
+        top:10%;
+        left:35%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        font-size: x-large;
+        padding: 1rem;
+       
+        }
+        .reviewInformation u{
+            position: absolute;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            font-size: large;
+        }
+        #selectedImage{
+            width: 5cm;
+            height: 3cm;
+        }
+        #showReservation{
+            background-color: white;
+            color: black;
+
+        }
+        #showReservation h1{
+            position: relative;
+            font-size: medium;
+            top:0;
+            left: 0.5cm;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        }
+        .reservationBox {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e6e6e6;
+            width: 95%;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+            height: auto;           
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            font-size: small;
+            top: 0.2cm;
+        }
+        .reservationBox h3{
+            font-weight: 300;
+        }
+        .reservationDetails{
+            margin-top: 0.5cm;
+            background-color: white;
+            width: 80%;
+            height:auto;
+            padding: 0.5cm;
+            border-radius: 10px;
+        }
+        input::placeholder {
+            font-size: large;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+
+        }
+        .selectButton.selected {
+            background-color: #ff9900;
+            color: white;
+            outline: none;
+        }
+                
         </style>
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
         <div class="title">
-            <div class="boxInFirstStep" id="boxInFirstStep">
+            <div class="boxInFirstStep" id="boxInFirstStep"> 
                 <div class="locationSelectionBoxInFirstStepBox">
                     <label for="locationSelection">Pick up & Return location </label>
                     <select id="locationSelection">
-                        <option value="" selected disabled>Select a location</option>
+                        <option value="" selected disabled>📍 Select a location</option>
                         <option value="Istanbul">📍 Istanbul</option>
                         <option value="Berlin">📍 Berlin</option>
                         <option value="Paris">📍 Paris</option>
@@ -445,7 +683,6 @@
          
                 <div class="dateSelectionBoxInFirstStepBox" id="dateSelectionBoxInFirstStepBox">
                     <label for="dateSelection">Pick up date</label>
-                    
                     <div>
                         <input type="text" name="daterange" id="daterangeInput" placeholder="Select Date Range">
                         <img src="https://img.icons8.com/?size=100&id=23&format=png&color=000000" style="float:inline-start" width="30" height="30">
@@ -453,40 +690,16 @@
 
                 </div>
                     <button class="next-button" type="button" onclick="handleLocationSelection()">Next</button>
-                </div>
-
-                        <script>
-                            var days;
-                            document.addEventListener("DOMContentLoaded", function () {
-                            const dateRangeInput = document.getElementById("daterangeInput");
-
-                            $(dateRangeInput).daterangepicker({
-                                opens: 'left', 
-                                locale: {
-                                    format: 'MM/DD/YYYY' 
-                                }
-                            });
-                            
-                            $(dateRangeInput).on('apply.daterangepicker', function (ev, picker) {
-                                days = picker.endDate.diff(picker.startDate, 'days') + 1; 
-                                console.log("x:" + days);
-                                
-                            });
-                        });
-
-                        </script>
-                      
-                    
-                </div>
-                
+                </div>                        
             </div>
+            
             <div id="carContainer" class="whiteBackgroundOfCarTables" style="display: none;">  
                 <div class="filterSection" id="filterSection">
                     <div class="brandFilter">
                         <label for="brandFilter"></label>
                         <select id="brandFilter" onchange="filterCars()" >
                             <option value="" selected disabled>Brand</option>
-                            <option value="All">All Brands</option>
+                            <option value="All" selected>All Brands </option>
                             <option value="Audi">Audi</option>
                             <option value="Peugeot">Peugeot</option>
                             <option value="Volkswagen">Volkswagen</option>
@@ -500,11 +713,13 @@
                     <label for="transmissionFilter"></label>
                     <select id="transmissionFilter" onchange="filterCars()" >
                         <option value="" selected disabled>Transmission Type</option>
-                        <option value="All">All Transmission Types</option>
+                        <option value="All" selected>All Transmission Types</option>
                         <option value="Manuel">Manuel</option>
                         <option value="Automatic">Automatic</option>
                     </select>
                 </div>
+                <button class="car-selection-back-button" onclick="switchStep(1)">Back</button>
+                <button class="car-selection-next-button" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}')">Next</button>
                 <div id="noCarMessage" class="noCarMessage" style="display: none;">
                     There are no cars with the desired specifications. Please try different filters.
                 </div>
@@ -513,114 +728,229 @@
 
         </div>         
         <div class="white">
-            <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 3.2cm;height:3.2cm;">
+            <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 8%;height:100%;">
+                <button type="button" class="menuButton" onclick="openNav()">My reservations</button>
+                <div class="sideNavigation" id="sideNavigation">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNavigation()">&times;</a>
+                    <div class="showReservation" id="showReservation">
+                        <h1>My Reservations</h1>
+                        <div class="reservationBox" id="reservationBox">                    
+                            </div>
+                    </div>
+            </div>
+
 
             <div class="stepper">
-                <div class="stepBox" id="step1" onclick="switchStep(1)">
+                <div class="stepBox" id="step1">
                     Step 1: Location Selection
                 </div>
             
-                <div class="stepBox" id="step2" onclick="switchStep(2)">
+                <div class="stepBox" id="step2">
                     Step 2: Car Selection
                 </div>
             
-                <div class="stepBox" id="step3" onclick="switchStep(3)">
+                <div class="stepBox" id="step3">
                     Step 3: Extras
+                </div>
+
+                <div class="stepBox" id="step4">
+                    Step 4: Review
                 </div>
             </div>
         </div>
         <div class="extrasPage" id="extrasPage">
             <h1>Protection Plans</h1>
-           
         </div>
 
-                <script>
- 
-                    function handleLocationSelection() {
-                        const location = document.getElementById("locationSelection").value;
+        <div class="reviewPage" id="reviewPage">
+            <div class="whiteBackgroundOfReview" id="whiteBackgroundOfReview">
+                <div class="boxInReviewPage" id="boxInReviewPage">
+                </div>
+                <button class="back-button-in-review" onclick="switchStep(3)">Back</button>
+               <script>
+                var userId = sessionStorage.getItem("userId");
+                console.log("id is" + userId);
+               </script>
+                <button class="complete-reservation-button" id="complete-reservation-button" onclick="alert('Your reservation is successfully completed!'); postReservation(); switchStep(1);"> Complete the reservation</button>
+            </div>
+        </div>
+        
+        
+        <script>
+        function resetStep1() {
+            const dateRangeInput = document.getElementById("daterangeInput");
+            $(dateRangeInput).val(''); // Input alanını temizle
+            selectedPickUpDate = null;
+            selectedReturnDate = null;
+        }
 
-                        if (location) {
-                            switchStep(2);
-                            loadCars();
-                            document.getElementById("filterSection").style.display = "block";
-                        }
-                    }
+            function openNav(){
+                document.getElementById("sideNavigation").style.width = "400px";  
+                showReservation();
+            }
+            function closeNavigation() {
+                document.getElementById("sideNavigation").style.width = "0";
+            }
+            var days;
+            var selectedPickUpDate;
+            var selectedReturnDate;
+            document.addEventListener("DOMContentLoaded", function () {
+            const dateRangeInput = document.getElementById("daterangeInput");
 
-                    async function switchStep(stepNumber) {
-                        const stepBoxes = document.querySelectorAll(".stepBox");
-                        stepBoxes.forEach(box => box.classList.remove("active"));
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1); 
+            $(dateRangeInput).daterangepicker({
+                opens: 'left', 
+                locale: {
+                    format: 'MM/DD/YYYY' 
+                },
+                autoUpdateInput: false,
+                minDate: moment(tomorrow).format('MM/DD/YYYY') 
+            });
+    
+            $(dateRangeInput).on('apply.daterangepicker', function (ev, picker) {
+                days = picker.endDate.diff(picker.startDate, 'days') + 1; 
+                selectedPickUpDate = picker.startDate.format('MM/DD/YYYY');
+                selectedReturnDate = picker.endDate.format('MM/DD/YYYY')
+                console.log("x:" + days);
 
-                        const currentStep = document.getElementById(`step${stepNumber}`);
-                        
-                        currentStep.classList.add("active");
-
-                        if (stepNumber === 1) {
-                            document.getElementById("extrasPage").style.display = "none"; 
-                            document.getElementById("carContainer").style.display = "none";
-                            document.getElementById("filterSection").style.display = "none";
-                            document.getElementById("extrasContainer").style.display = "none";
-                            document.getElementById("boxInFirstStep").style.display="block";
-                        } else if (stepNumber === 2) {
-                            document.getElementById("extrasPage").style.display = "none";
-                            document.getElementById("carContainer").style.display = "block";
-                            document.getElementById("boxInFirstStep").style.display = "none";
-                            document.getElementById("extrasContainer").style.display = "none";
-                        } else if (stepNumber === 3) {
-                            document.getElementById("carContainer").style.display = "none";
-                            document.getElementById("extrasPage").style.display = "block";
-                            loadExtras();
-                            
-                        }
-                    }
-                    var varPrice=0;
-                    async function filterCars() {
-                    const brand = document.getElementById("brandFilter").value || "All";;
-                    const transmission = document.getElementById("transmissionFilter").value || "All";;
-             
-                try {
-                    const response = await fetch(`http://localhost:8080/cars/filter?brand=${encodeURIComponent(brand)}&transmissionType=${encodeURIComponent(transmission)}`);
-                    if (response.ok) {
-                        const cars = await response.json();
-                        
-                        const container = document.getElementById("carContainer");
-                        const filterSection = container.querySelector(".filterSection");
-                        container.innerHTML = "";
-                        container.appendChild(filterSection); 
-                        if (cars.length === 0) {
-                            const noCarMessage = document.getElementById("noCarMessage");
-                            noCarMessage.style.display = "block";
-                           
-
-                        } else {
-                            noCarMessage.style.display = "none"; 
-                            cars.forEach(car => {
-                                const carBox = document.createElement("div");
-                                carBox.className = "carBox";
+                $(this).val(`${picker.startDate.format('MM/DD/YYYY')} - ${picker.endDate.format('MM/DD/YYYY')}`);
                 
-                                carBox.innerHTML = `
-                                    <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
-                                    <div class="carInformation">
-                                        <h1>${car.name}</h1>
-                                        <p>Brand: ${car.brand}</p>
-                                        <p>Transmission Type: ${car.transmissionType}</p>
-                                        <p>Fuel Type: ${car.fuelType}</p>
-                                        </div>
-                                        <div class="carPrice">
-                                            <p>${car.price} €/day</p>
-                                        <button class="selectButton" id="selectButton" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}')">SELECT</button>
-                                        </div>
-                                    
-                                `;
-                                container.appendChild(carBox);
-                        });
-                    }
-                    } else {
-                        console.error("", response.statusText);
-                    }
-                } catch (err) {
-                    console.error("Error:", err);
+            });
+        });
+            
+            function handleLocationSelection() {
+                const location = document.getElementById("locationSelection").value;
+                if (location) {
+                    switchStep(2);
+                }
+                else{
+                    alert("Please select a location!");
                 }
             }
+
+            async function switchStep(stepNumber) {
+                const stepBoxes = document.querySelectorAll(".stepBox");
+                stepBoxes.forEach(box => box.classList.remove("active"));
+                const currentStep = document.getElementById(`step${stepNumber}`);
+                currentStep.classList.add("active");
+                document.getElementById("whiteBackgroundOfReview").style.display = "none"; 
+                document.getElementById("extrasPage").style.display = "none"; 
+                document.getElementById("carContainer").style.display = "none";
+                document.getElementById("filterSection").style.display = "none";
+                document.getElementById("boxInFirstStep").style.display = "none";
+                
+                if (stepNumber === 1) {
+                    document.getElementById("boxInFirstStep").style.display="flex";
+                    const locationSelection = document.getElementById("locationSelection");
+                    locationSelection.value="";
+                    document.getElementById("step2").innerHTML = `
+                    Step 2: Car Selection
+                `;
+                resetStep1();
+                }else if (stepNumber === 2 && selectedButtonId) {
+                    document.getElementById("carContainer").style.display = "block";
+                    document.getElementById("filterSection").style.display = "block";
+                    const brandSelect = document.getElementById("brandFilter");
+                    const transmissionSelect = document.getElementById("transmissionFilter");
+                    brandSelect.value = "All";
+                    transmissionSelect.value = "All";
+                    await loadCars();
+                    console.log(selectedButtonId);
+                    const selectedButton = document.getElementById(selectedButtonId);
+                    selectedButton.classList.add("selected");
+                    document.getElementById("step3").innerHTML = `
+                    Step 3: Extras
+                `;
+
+                } else if (stepNumber === 2) {
+                    console.log(locationSelection);
+                    if (!selectedPickUpDate || !selectedReturnDate) {
+                        alert("Please select date!");
+                        switchStep(1);
+                        return;
+                    }
+                    document.getElementById("carContainer").style.display = "block";
+                    document.getElementById("filterSection").style.display = "block";
+                    const brandSelect = document.getElementById("brandFilter");
+                    const transmissionSelect = document.getElementById("transmissionFilter");
+                    brandSelect.value = "All";
+                    transmissionSelect.value = "All";
+                    await loadCars();
+                    document.getElementById("step3").innerHTML = `
+                    Step 3: Extras
+                `;
+                } else if (stepNumber === 3) {
+                    document.getElementById("extrasPage").style.display = "block";
+                    if (!selectedName) {
+                        alert("Please select car!");
+                        switchStep(2);
+                        return;
+                    }
+                    await loadExtras(); 
+                    setTimeout(() => {
+                    const basicProtectionButton = document.getElementById("basicProtectionButton");
+                    if (basicProtectionButton) {
+                        basicProtectionButton.click(); 
+                        basicProtectionButton.focus(); 
+                    }
+                }, 50); 
+
+                }else if (stepNumber === 4) {
+                    await loadReview();
+                    document.getElementById("whiteBackgroundOfReview").style.display = "block"; 
+                }
+            }
+
+            var varPrice=0;
+            async function filterCars() {
+                const brand = document.getElementById("brandFilter").value || "All";;
+                const transmission = document.getElementById("transmissionFilter").value || "All";;
+            
+            try {
+                const response = await fetch(`http://localhost:8080/cars/filter?brand=${encodeURIComponent(brand)}&transmissionType=${encodeURIComponent(transmission)}`);
+                if (response.ok) {
+                    const cars = await response.json();
+                    
+                    const container = document.getElementById("carContainer");
+                    const filterSection = container.querySelector(".filterSection");
+                    container.innerHTML = "";
+                    container.appendChild(filterSection); 
+                    if (cars.length === 0) {
+                        const noCarMessage = document.getElementById("noCarMessage");
+                        noCarMessage.style.display = "block";
+                        
+
+                    } else {
+                        noCarMessage.style.display = "none"; 
+                        cars.forEach(car => {
+                            const carBox = document.createElement("div");
+                            carBox.className = "carBox";
+            
+                            carBox.innerHTML = `
+                                <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
+                                <div class="carInformation">
+                                    <h1>${car.name}</h1>
+                                    <p>Brand: ${car.brand}</p>
+                                    <p>Transmission Type: ${car.transmissionType}</p>
+                                    <p>Fuel Type: ${car.fuelType}</p>
+                                    </div>
+                                    <div class="carPrice">
+                                        <p>${car.price} €/day</p>
+                                    <button class="selectButton" id="selectButton-${car.id}" onclick="carChoice(this, '${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}')">SELECT</button>
+                                    </div>
+                            `;
+                            container.appendChild(carBox);
+                    });
+                }
+                } else {
+                    console.error("", response.statusText);
+                }
+            } catch (err) {
+                console.error("Error:", err);
+            }
+        }
             
             async function loadCars() {
                 if (document.getElementById("carContainer").style.display !== "block") {
@@ -639,6 +969,7 @@
                             cars.forEach(car => {
                             const carBox = document.createElement("div");
                             carBox.className = "carBox";
+                            
                             carBox.innerHTML = `
                                 <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
                                 <div class="carInformation">
@@ -649,10 +980,8 @@
                                     </div>
                                     <div class="carPrice">
                                         <p>${car.price} €/day</p>
-                                        <button class="selectButton" id="selectButton" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}')">SELECT</button>
-                                        
+                                        <button class="selectButton" id="selectButton-${car.id}" onclick="carChoice(this, '${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}', '${car.id}')">SELECT</button>
                                     </div>
-                                
                             `;
                             container.appendChild(carBox);
                         });
@@ -665,13 +994,39 @@
                 }
             }
 
-            let selectedCar = null; 
+            var selectedCar = ""; 
+            var selectedBrand="";
+            var selectedName="";
+            var selectedImage="";
+            var selectedCarPrice=0;
+            var carId=0;
+            let selectedButtonId = null;
 
-            function handleSelection(brand, name, price){
+            function carChoice(button, brand, name, price, image, id){
+                if (selectedButtonId && selectedButtonId !== button.id) {
+                const previousButton = document.getElementById(selectedButtonId);
+                if (previousButton) {
+                    console.log(previousButton);
+                    console.log(button.id);
+                    previousButton.classList.remove("selected");
+                }
+            }
+                button.classList.add("selected");
+                selectedButtonId = button.id;
+                console.log("selectedButtonId" + selectedButtonId);
+                selectedBrand=brand;
+                selectedName=name;
+                selectedImage=image;
+                selectedCarPrice=price;
+                carId=id;
+            
+            }
+            function handleSelection(brand, name, price, image){
                 varPrice=0;
-                const selectedCar = `${brand} ${name}`;
+                console.log(selectedBrand);
+                const selectedCar = `${selectedBrand} ${selectedName}`;
                 selectCar(selectedCar);
-                calculatePrice(price);
+                calculatePrice(selectedCarPrice);
             }
 
             function selectCar(carName) {
@@ -681,18 +1036,43 @@
                     <p>${selectedCar}</p>
                 `;
                 switchStep(3); 
-
             }
+
             function calculatePrice(price){
                 varPrice+=price*days;
                 console.log(varPrice);
+            }
+                var totalExtra=0;
+                var selectedExtraPrice=0;
+                var selectedExtraName="";
+                var protectionId=0;
 
-            }
-            /*function addExtraPriceToTotal(extraPrice){
-                console.log(extraPrice);
-                calculatePrice(e)
-            }
-            */
+            function calculateExraPrice(extraPrice,planType,id){
+                if(extraPrice==0){
+                    selectedExtraPrice=extraPrice;
+                    selectedExtraName=planType;
+                    protectionId=id;
+                    totalPrice=varPrice;
+                    const totalPriceElement = document.getElementById("totalPrice");
+                    totalPriceElement.innerText = `${totalPrice} €`;
+                }
+                    totalExtra=0;
+                    totalPrice=varPrice;
+                    selectedExtraPrice=extraPrice;
+                    selectedExtraName=planType;
+                    protectionId=id;
+                    totalExtra+=selectedExtraPrice*days;
+                    console.log(totalExtra);
+                    totalPrice=varPrice+totalExtra;
+                    const totalPriceElement = document.getElementById("totalPrice");
+                    totalPriceElement.innerText = `${totalPrice} €`;
+
+                    document.getElementById("step3").innerHTML = `
+                    Step 3: Extras
+                    <p>${planType}</p>
+                `;
+                }
+
             async function loadExtras(){
                 try {
                     const response = await fetch("http://localhost:8080/plans");
@@ -705,8 +1085,10 @@
                             <h1>Protection Plans</h1>
                              <div class="totalPriceBox" id="totalPriceBox">
                                 <h2>Total Price</h2>
-                                <p id="totalPrice">${varPrice} €</p>
+                                <p id="totalPrice">${varPrice} €</p> 
                             </div>
+                            <button class="back-button-in-extras" type="button" onclick="switchStep(2)">Back </button>
+                            <button class="next-button-in-extras" type="button" onclick="switchStep(4)">Next </button>
                         `;
                         extras.forEach((extra, index) => {
                         const extrasBox = document.createElement("div");
@@ -718,7 +1100,7 @@
                             Collision Damage Protection
                         </p>
                         `;
-                                if(extra.windscreenGlassTyresProtection==false && extra.keyAndLicenceAssurance==false){
+                                if(extra.windscreenGlassTyresProtection===false && extra.keyAndLicenceAssurance===false){
                                     boxContent+= ` 
                                     <p>
                                         <img src="https://img.icons8.com/?size=100&id=fYgQxDaH069W&format=png&color=000000" alt="icon" class="icon">
@@ -727,14 +1109,15 @@
                                         Key And Licence Assurance
                                         </p>
                                         `;
-                                        if(extra.price==null){
+                                        if(extra.price==0){
                                             boxContent+= ` 
                                             <div class="protectionPrice">
                                                 <p>Included</p>
+                                                <button autofocus class="selectButtonForProtection" id="basicProtectionButton" onclick="calculateExraPrice('${extra.price}','${extra.planType}')" onfocus="calculateExraPrice('${extra.price}','${extra.planType}', '${extra.id}')"> Select </button>
                                                  </div>
                                             `;
                                         }
-                                }else if(extra.windscreenGlassTyresProtection==true && extra.keyAndLicenceAssurance==false){
+                                }else if(extra.windscreenGlassTyresProtection===true && extra.keyAndLicenceAssurance===false){
                                     boxContent+= ` 
                                     <p>
                                         <img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
@@ -743,7 +1126,7 @@
                                         Key And Licence Assurance
                                          <div class="protectionPrice">
                                                 <p>${extra.price} €/day</p>
-                                                 <button class="selectButtonForProtection" onclick="calculatePrice(${extra.price})"> Select </button>
+                                                 <button class="selectButtonForProtection" onclick="calculateExraPrice('${extra.price}','${extra.planType}','${extra.id}')"> Select </button>
                                                  </div>
                                         </p>
                                         `;
@@ -757,18 +1140,15 @@
                                         Key And Licence Assurance
                                         <div class="protectionPrice">
                                                 <p>${extra.price} €/day</p>
-                                                 <button class="selectButtonForProtection" onclick="calculatePrice(${extra.price})"> Select </button>
+                                                 <button class="selectButtonForProtection" onclick="calculateExraPrice('${extra.price}','${extra.planType}','${extra.id}')"> Select </button>
                                                  </div>
                                         </p>
                                         `;
                                 }
                                 extrasBox.innerHTML = boxContent;
                                 extrasPage.appendChild(extrasBox);
-
                             })
-                                
                         }
-                
                         
                     else {
                         console.error("Failed to fetch extras:", response.statusText);
@@ -777,7 +1157,115 @@
                     console.error("Error:", err);
                 }
             };
+            function loadReview(){
+                const boxInReviewPage = document.getElementById("boxInReviewPage");
+                var username = sessionStorage.getItem("username");
+                console.log(username);
+                const locationValue = document.getElementById("locationSelection").value;
 
+
+                boxInReviewPage.innerHTML = ` 
+                    <div class="reviewInformation" id="reviewInformation"> 
+                        <u><b> Driver</b></u>
+                        <br>
+                        <p> Username: ${username} </p>
+                        <u><b> Reservation Details</b></u>
+                        <br>
+                        <p> Location: ${locationValue} </p>
+                        <p> Pick Up Date: ${selectedPickUpDate}</p>
+                        <p> Return Date: ${selectedReturnDate}</p>
+                        <p> Protection Plan: ${selectedExtraName}</p>
+
+                        <br>
+                        <u><b> Vehicle</b></u>
+                        <br>
+                        <p>${selectedBrand} ${selectedName}</p>
+                        <img class="selectedImage" id="selectedImage" src="${selectedImage}"" alt="${selectedName}">
+                       <br> 
+                        <u> <b>Prices</b></u>
+                        <br>
+                        <p> Car price for ${days} days: ${selectedCarPrice}€ * ${days} = ${varPrice}€</p>
+                        <p> Protection price for ${days} days: ${selectedExtraPrice}€ * ${days} = ${totalExtra}€</p>
+                        <p> Total price: <b>${totalPrice}€</b></p>
+                    </div>
+                `;
+            }
+            
+            async function showReservation(){
+                if (userId == "") {
+                    console.error("User ID is missing!");
+                    return;
+                }
+                try {
+                    const response = await fetch(`http://localhost:8080/reservations/user/${userId}`);
+                    if (response.ok) {
+                        const reservations = await response.json();  
+                        const reservationBox = document.getElementById("reservationBox");                     
+                            reservationBox.innerHTML = "";
+                            const reservationElement = document.createElement("div");
+                            reservationElement.className = "reservationDetails";
+                        if (reservations.length === 0) {
+                            reservationElement.innerHTML = `
+                                <b> You don't have any reservation</b>
+                            `;
+                            reservationBox.appendChild(reservationElement);
+                            return;
+                        }     
+                        console.log("User ID:", userId);
+                        reservations.forEach(reservation => {      
+                            const reservationElement = document.createElement("div");
+                            reservationElement.className = "reservationDetails";             
+                            reservationElement.innerHTML = `
+                                <p> <b>Car name:</b> ${reservation.carName} </p>
+                                <p> <b>Car brand:</b> ${reservation.carBrand} </p>
+                                <p> <b>Protection Plan:</b> ${reservation.extraName} </p>
+                                <p> <b>Pick-up date:</b> ${reservation.pickUpDate} </p>
+                                <p> <b>Return date:</b> ${reservation.returnDate} </p>
+                                <p> <b>Total price:</b> ${reservation.totalPrice} € </p>
+                            `;
+                            reservationBox.appendChild(reservationElement);
+                        })
+                     }
+                }
+                catch (err) {
+                console.error("Error:", err);
+            }
+}
+            async function postReservation(){
+                const pickUpDate = new Date(selectedPickUpDate);
+                console.log(pickUpDate);
+                const returnDate = new Date(selectedReturnDate);
+                console.log(returnDate);
+                const location= document.getElementById("locationSelection").value;
+                console.log(location);
+                console.log(protectionId);
+
+
+                try {
+                    const response = await fetch('http://localhost:8080/reservations', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': "application/json"
+                                },
+                                mode: 'cors',
+                                body: JSON.stringify({
+                                  userId:userId,
+                                  carId:carId,
+                                  protectionId:protectionId,
+                                  location:location,
+                                  pickUpDate:pickUpDate,
+                                  returnDate:returnDate,
+                                  totalPrice:totalPrice
+                                }),
+                    })
+                    if (response.ok) {
+                        console.log('Request successful!');       
+                    }
+                }
+                 catch(err) {
+                    console.error(`Error: ${err}`);
+                }
+            }
          </script>   
         </div> 
         <script>

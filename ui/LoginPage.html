@@ -92,7 +92,6 @@
 
                             console.log(n)
                             console.log(p)
-
                             console.log(button.id)
                             
                             const response = await fetch('http://localhost:8080/books/login', {
@@ -110,8 +109,13 @@
                             });
 
                             if (response.ok) {
-                                console.log('Request successful!')
-                                window.open('carOptions.html');
+                                console.log('Request successful!');
+                                const user = await response.json();
+
+                                sessionStorage.setItem("userId", user.id);
+                                sessionStorage.setItem("username", n);
+                                
+                                window.location.href = ('carOptions.html');
                             } else {
                                 if (response.status === 404){
                                     alert("There is no user! Please sign in!");
