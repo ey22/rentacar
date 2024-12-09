@@ -1,133 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <!--To ensure proper scaling on mobile devices.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            .logoImage{
-                position: absolute;
-                left: 10px;
-                top:1px;
+            /* UI styles */
+            body {
+            margin: 0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
-            .title{
-                position: absolute;
-                background-color: rgb(204, 153, 102,0.3);
-                color:black;
-                left: 0; 
-                width: 100%; 
+            .logoImage {
+                width: 8%;
                 height: 100%;
-                top:10px;
-                align-items: center;
-            } 
-            .white{
-                position: absolute;
-                background-color: white;
-                width: 100%; 
-                height: 15%;
-                left:0;
-                top:0;
+            }.title {
+                background-color: rgba(204, 153, 102, 0.3);
+                color: black;
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 0 20px;
-            }
-            .SigninBox{
-                position: absolute;
-                top: 50%; 
-                left: 50%; 
-                transform: translate(-50%, -50%);
-                background-color: white;
-                display: flex;
-                width: 13cm;
-                height: 13cm;
-                text-align: center;
-                align-items: center;
-                flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                text-align: center;
+            }.white {
+                position: absolute;
+            background-color: white;
+            width: 100%; 
+            height: 15%;
+            left:0;
+            top:0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            }.SigninBox {
+                background-color: white;
+                width: 90%;
+                max-width: 500px;
+                text-align: center;
+                padding: 20px;
+                margin: 20px;
                 box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
                 border-radius: 10px;
-                
-            }
-            #name, #password{
+            }#name, #password {
                 font-size: larger;
-                padding: 13px;
-                margin-bottom: 30px;
-            }
-            label{
+                padding: 10px;
+                margin-bottom: 20px;
+                width: calc(100% - 20px);
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }label {
+                font-size: larger;
+                display: block;
+                margin-bottom: 5px;
+                text-align: left;
+                width: calc(100% - 20px);
+                margin: 10px auto;
+            }.SigninTitle {
+                margin-bottom: 20px;
+                font-size: 24px;
+                font-weight: bold;
+            }.continueButton {
                 font-size: larger;
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
-            .SigninTitle{
-                margin-bottom: 40px; 
-                font-size: 30px;
-                font-weight: 900;
-            }
-            .continueButton{
-                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-size: larger;
-                background-color: rgb(204, 153, 102,0.3);
+                background-color: rgba(204, 153, 102, 0.3);
                 border-radius: 10px;
-                width: 3cm;
-                height: 1cm;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+            }.continueButton:hover {
+            background-color: rgba(204, 153, 102, 0.5);
+            }
+            /* Responsive styles */
+            @media (max-width: 768px) {
+                .SigninBox {
+                    padding: 15px;
+                }.SigninTitle {
+                    font-size: 20px;
+                }#name, #password {
+                    font-size: medium;
+                }.continueButton {
+                    font-size: medium;
+                }
             }
         </style>
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
+        <div class="white">
+            <img class="logoImage" src="./images/Logo.webp" alt="logo of car">
+        </div>
         <div class="title">
+            <!--The section where the user will enter their information to sign in-->
             <div class="SigninBox">
                 <h2 class="SigninTitle">Create an account!</h2>
-                <form id="form">
+                <form>
                     <label for="name">User name:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" required><br>
                     <button class="continueButton" type="button" id="button">Continue</button>
-                    <script>
-                        const button = document.getElementById("button");
-
-                        button.addEventListener("click", async function (e) {
-                        try {
-                            var n = document.getElementById("name").value
-                            var p = document.getElementById("password").value
-
-                            console.log(n)
-                            console.log(p)
-
-                            console.log(button.id)
-                            
-                            const response = await fetch('http://localhost:8080/books', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': "application/json"
-                                },
-                                mode: 'cors',
-                                body: JSON.stringify({
-                                    name: n,
-                                    password: p,
-                                }),
-                            });
-                            
-                            if (response.ok) {
-                                console.log('Request successful!');
-                                window.open('carOptions.html');
-                            } else {
-                                console.error('Request failed:', response.statusText);
-                            }
-
-                            console.log('Completed!');
-                        } catch(err) {
-                            console.error(`Error: ${err}`);
-                        }
-                        });                
-                    </script>
                 </form>
-            </div>   
+            </div>
         </div>
-        <div class="white">      
-        <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 3.2cm;height:3.2cm;">
-    </div>
-
-</body>
+    </body>
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", async function (e) {
+        try {
+            var n = document.getElementById("name").value
+            var p = document.getElementById("password").value     
+            //Saves information to the database via API   
+            const response = await fetch('http://localhost:8080/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                mode: 'cors',
+                body: JSON.stringify({
+                    name: n,
+                    password: p,
+                }),
+            });
+            if (response.ok) {
+                const user = await response.json();
+                sessionStorage.setItem("userId", user.id);
+                sessionStorage.setItem("username", n);
+                window.location.href = ('carOptions.html');
+            } else {
+                console.error('Request failed:', response.statusText);
+            }
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+        });                
+    </script>
             
 
         

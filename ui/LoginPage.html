@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <style>
@@ -138,7 +138,154 @@
             </div>
         </div>
         <div class="white">
-        <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 3.2cm;height:3.2cm;">
+        <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 8%;height:100%;">
     </div>
 
     </body>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--To ensure proper scaling on mobile devices.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /* UI styles */
+        body {
+            margin: 0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }.logoImage {
+            width: 8%;
+            height: 100%;
+        }.title {
+            background-color: rgba(204, 153, 102, 0.3);
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }.white {
+            position: absolute;
+            background-color: white;
+            width: 100%; 
+            height: 15%;
+            left:0;
+            top:0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }.LoginBox {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }#name, #password {
+            font-size: larger;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }label {
+            font-size: larger;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+        }.loginTitle {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }.continueButton {
+            font-size: larger;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgba(204, 153, 102, 0.3);
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }.continueButton:hover {
+            background-color: rgba(204, 153, 102, 0.5);
+        }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .LoginBox {
+                padding: 15px;
+            }.loginTitle {
+                font-size: 20px;
+            }#name, #password {
+                font-size: medium;
+            }.continueButton {
+                font-size: medium;
+            }
+        }
+    </style>
+    <link rel="icon" href="images/car_icon.png">
+</head>
+<body>
+    <div class="white">
+        <img class="logoImage" src="./images/Logo.webp" alt="logo of car">
+    </div>
+    <div class="title">
+        <!--The section where the user will enter their information to log in-->
+        <div class="LoginBox">
+            <h2 class="loginTitle">Log in with your information</h2>
+            <form>
+                <label for="name">User name:</label><br>
+                <input type="text" id="name" name="name" required>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+                <button class="continueButton" type="button" id="button">Continue</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    //Checks whether there is information in the database via API
+    const button = document.getElementById("button");
+    button.addEventListener("click", async function (e) {
+        e.preventDefault(); 
+    try {
+        var n = document.getElementById("name").value
+        var p = document.getElementById("password").value
+        //Assigns a query to the API
+        const response = await fetch('http://localhost:8080/users/login', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({
+                name: n,
+                password: p,
+            }),
+        });
+        if (response.ok) {
+            const user = await response.json();
+            sessionStorage.setItem("userId", user.id);
+            sessionStorage.setItem("username", n);
+            window.location.href = ('carOptions.html');
+        } else {
+            //Handling some error messages
+            if (response.status === 404){
+                alert("There is no user! Please sign in!");
+            }else if(response.status === 400){
+                alert("Password is incorrect! Please try again!");
+            }else {
+                console.error('Request failed:', response.statusText);
+            }
+        }
+    } catch(err) {
+        console.error(`Error: ${err}`);
+    }
+    });                
+</script>
+</html>

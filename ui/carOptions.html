@@ -8,25 +8,25 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
         <style>
         .logoImage{
             position: absolute;
             left: 10px;
             top:1px;
-        }
-        .title{
+            width: 8%;
+            height: 100%;
+        }.title{
             display: flex;
             position: absolute;
             background-color: rgb(204, 153, 102,0.3);
             color:black;
             left: 0; 
             width: 100%; 
-            height: 100%;
+            min-height: 100vh;
+            height: auto;
             align-items: center;
             
-        } 
-        .white{
+        }.white{
             position: absolute;
             background-color: white;
             width: 100%; 
@@ -37,8 +37,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-        }
-        .menuButton {
+        }.menuButton {
             position: absolute; 
             display: flex; 
             justify-content: center; 
@@ -56,13 +55,10 @@
             font-weight: 500;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             top: 20%;
-        }
-        
-        .menuButton:active {
+        }.menuButton:active {
             transform: scale(0.9); 
             background-color: #f0f0f0;
-        }
-        .sideNavigation {
+        }.sideNavigation {
             height: 100%; 
             width: 0; 
             position: fixed; 
@@ -83,18 +79,15 @@
             display: block;
             transition: 0.3s;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        .sideNavigation a:hover {
+        }.sideNavigation a:hover {
             color: black;
-        }
-        .sideNavigation .closebtn {
+        }.sideNavigation .closebtn {
             position: absolute;
             top: 0;
             right: 25px;
             font-size: 36px;
             margin-left: 50px;
-        }
-        .brandFilter{
+        }.brandFilter{
             position: absolute;
             left:8cm;
             top:0;
@@ -111,8 +104,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        #brandFilter {
+        }#brandFilter {
             padding: 0.5rem;
             border-radius: 4px;
             border: 1px solid #fbf8f8;
@@ -122,8 +114,7 @@
             font-size:large;
             border-style:inset;
             font-weight: 400;
-        }
-        .transmissionFilter{
+        }.transmissionFilter{
             position: absolute;
             left:15cm;
             top:0;
@@ -140,8 +131,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        #transmissionFilter{
+        }#transmissionFilter{
             padding: 0.5rem;
             border-radius: 4px;
             border: 1px solid #fbf8f8;
@@ -151,8 +141,7 @@
             font-size:large;
             border-style:inset;
             font-weight: 400;
-        }
-        .whiteBackgroundOfCarTables{
+        }.whiteBackgroundOfCarTables{
             top: 4cm;
             position: relative;
             overflow: visible;
@@ -166,8 +155,7 @@
             padding: 1rem;
             flex-direction: column;  
             margin-top: 0;
-        }
-        .filterSection {
+        }.filterSection {
             position: relative;
             justify-content: flex-start;
             align-items: center;
@@ -176,6 +164,7 @@
             border-bottom: 1px solid #ccc; 
             margin-top:1cm;
             margin-bottom: 5rem; 
+            flex-wrap: wrap;
         }
         .car-selection-next-button{
             position: absolute;
@@ -188,8 +177,7 @@
             top:0.5cm;
             right: 0.5cm;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       }
-       .car-selection-back-button{
+       }.car-selection-back-button{
             position: absolute;
             width: 4cm;
             height: 1cm;
@@ -200,8 +188,7 @@
             top:0.5cm;
             left: 0.5cm;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       }
-        .carBox {
+       }.carBox {
             display: flex;
             align-items: center;
             background-color: #e6e6e6;
@@ -211,18 +198,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 1rem;
             height: 6cm;
-        }
-        .carBox:hover {
+        }.carBox:hover {
             transform: translateY(-5px);
             cursor: pointer;
-        }
-        .carImage {
+        }.carImage {
             width: 9cm;
             height: 6cm;
             border-radius: 8px;
             margin-right: 2rem;
-        }
-        .carInformation {
+        }.carInformation {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -230,15 +214,13 @@
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: 600;
             justify-content: space-between;
-        }     
-        .carPrice{
+        }.carPrice{
             font-size: x-large;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: 600;
             margin-left: auto;
             flex-direction: column;  
-        }
-        .selectButton{
+        }.selectButton{
             height: 2cm;
             width: 4cm;
             background-color:rgb(203, 163, 123) ;
@@ -253,13 +235,11 @@
             align-items: center;
             justify-content: center;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;      
-        }
-        .selectButton:focus {
+        }.selectButton:focus {
             background-color: #ff9900;
             color: white;
             outline: none;
-        }
-        .stepper {
+        }.stepper {
             display: flex;
             justify-content: space-around;
             margin: 2rem 0 2rem 8rem;
@@ -269,8 +249,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-style:inset;
             
-        }
-        .stepBox {
+        }.stepBox {
             flex: 1;
             text-align: center;
             padding: 1rem;
@@ -282,34 +261,25 @@
             background-color: rgb(203, 163, 123); 
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             font-weight: 400; 
-        }
-
-        .stepBox.active {
+        }.stepBox.active {
             background-color: #ff9900;
             color: white;
             font-weight: 400; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .stepContent {
+        }.stepContent {
             display: none;
             padding: 2rem;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-        }
-
-        .stepContent.active {
+        }.stepContent.active {
             display: block;
-        }
-
-        .selectionLabel {
+        }.selectionLabel {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
-        }
-        #locationSelection {
+        }#locationSelection {
             padding: 0.7rem;
             border-radius: 8px;
             border: 2px solid #ccc;
@@ -318,13 +288,10 @@
             font-size: large;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             margin-top: 0.5rem;
-        }
-
-        #boxInFirstStep{
+        }#boxInFirstStep{
             position: relative;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             height: 10cm;
             width: 30cm;
             background-color:rgb(206, 174, 142);
@@ -338,24 +305,22 @@
             font-size: x-large;
             padding: 1rem;
             margin: auto;
-        }
-        .locationSelectionBoxInFirstStepBox{
+            justify-content: flex-start; 
+        }.locationSelectionBoxInFirstStepBox{
             display: flex;
             flex-direction: column; 
             justify-content: center;
             align-items: flex-start; 
             gap: 0.5rem; 
             width: 50%;
-        }
-        .dateSelectionBoxInFirstStepBox{   
+        }.dateSelectionBoxInFirstStepBox{   
             display: flex;
             flex-direction: column; 
             justify-content: center;
             align-items: flex-start; 
             gap: 0.5rem;
             width: 50%; 
-        }
-        #dateSelectionButton {
+        }#dateSelectionButton {
             display: flex;
             align-items: center; 
             padding: 0.5rem;
@@ -368,13 +333,10 @@
             height: 1.5cm;
             gap: 10px;
             cursor: pointer;
-        }
-        .button-icon{
+        }.button-icon{
             width: 20px;
             height: 20px;
-        }
-         
-        .noCarMessage {
+        }.noCarMessage {
             position: relative;
             text-align: center;
             font-size: 1.5rem;
@@ -389,8 +351,7 @@
             margin-left: auto;
             margin-right: auto;
             top:3cm;
-        }
-        .box1, .box2, .box3{
+        }.box1, .box2, .box3{
             float:left;
             width: 25%;
             height: 10cm;
@@ -402,8 +363,7 @@
             border-radius: 10px; 
             cursor: pointer;
 
-        }
-        #extrasPage{
+        }#extrasPage{
             flex-direction: column;
             display: flex;
             position: relative;
@@ -412,9 +372,11 @@
             height: 50%;
             top:50%;
             align-items: center;
-            
-        }
-        #extrasPage h1{
+            flex-wrap: wrap;
+        }.extrasPage {
+            position: relative; 
+            height: auto;
+        }#extrasPage h1{
             position: absolute;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:xx-large;
@@ -422,26 +384,22 @@
             top:5cm;
             left:2cm;
             
-        }
-        #extrasPage h2{
+        }#extrasPage h2{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size:xx-large;
+            font-size:x-large;
             font-weight: 400;
             margin-left:1cm;
-        }
-        .icon{
+        }.icon{
             position: relative;
             height: 30px;
             width: 30px;
             top:8px;
-        }
-        .protectionPrice{
+        }.protectionPrice{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:xx-large;
             font-weight: 400;
             margin-left:1cm;
-        }
-        .selectButtonForProtection{
+        }.selectButtonForProtection{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: large;
             font-weight: 500;
@@ -449,13 +407,9 @@
             border-radius: 10px;
             width: 2cm;
             height: 1cm;
-           
-
         }.selectButtonForProtection:focus{
             background-color: #ff9900;
-        }
-        
-        .complete-reservation-button{
+        }.complete-reservation-button{
             position: relative;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: large;
@@ -466,8 +420,7 @@
             height: 1.5cm;
             bottom:1.5cm;
             left: 80%;
-        }
-        .back-button-in-review{
+        }.back-button-in-review{
             position: absolute;
             bottom:2cm;
             right: 85%;
@@ -478,16 +431,12 @@
             font-size: x-large;
             font-weight: 600;  
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        
-
-        #step2 p{
+        }#step2 p{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:smaller;
-        }
-        .totalPriceBox {
+        }.totalPriceBox {
             position: absolute;
-            top: 1rem;
+            top: 10%;
             right: 5cm;
             padding: 1rem;
             border: 2px solid #ccc;
@@ -497,22 +446,20 @@
             text-align: center;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             width: 200px;
-        }
-
-        .totalPriceBox h2 {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+        }.totalPriceBox h2 {
             font-size: 16px;
             margin: 0;
-            font-weight: bold;
-            align-items: center;
-        }
-
-        .totalPriceBox p {
-            font-size: 20px;
+            font-size: medium;
+            font-weight: 400;
+            margin-left: 1cm;
+        }.totalPriceBox p {
+            font-size: x-large;
             margin: 0;
-            font-weight: normal;
-        }
-       
-        #daterangeInput {
+            font-weight: 400;
+        }#daterangeInput {
             margin-top: 10px;
             font-size: 16px;
             width: 7cm;
@@ -523,11 +470,9 @@
             padding: 0.7rem;
             border-radius: 8px;
             border: 2px solid #ccc;
-        }
-       .dateSelectionBoxInFirstStepBox img{
+        }.dateSelectionBoxInFirstStepBox img{
             margin-top: 15px;
-       }
-       .next-button{
+        }.next-button{
             position: absolute;
             width: 4cm;
             height: 1cm;
@@ -538,8 +483,7 @@
             bottom: 0.5cm;
             right: 0.5cm;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       }
-       .next-button-in-extras{
+       }.next-button-in-extras{
             position: absolute;
             width: 4cm;
             height: 1cm;
@@ -549,8 +493,7 @@
             font-weight: 600;  
             top: 19cm;
             right:2cm;
-       }
-       .back-button-in-extras{
+       }.back-button-in-extras{
             position: absolute;
             width: 4cm;
             height: 1cm;
@@ -560,72 +503,59 @@
             font-weight: 600;  
             top: 19cm;
             left:2cm;
-       }
-
-       #whiteBackgroundOfReview{
-        top: 4cm;
-        position: relative;
-        overflow: visible;
-        width: 100%;
-        height: auto;   
-        left:0;
-        background-color: white;
-        flex-wrap: wrap;            
-        display: flex;
-        gap: 1rem; 
-        padding: 1rem;
-        flex-direction: column;  
-        margin-top: 0;
-       }
-       
-       .reviewInformation {
-        font-size: 16px;
-        color: black;
-        flex-direction: row;
-        line-height: 0.4cm;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-
-        }
-        .boxInReviewPage{
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        height: 15cm;
-        width: 10cm;
-        background-color: rgb(204, 153, 102,0.3);
-        border: 1px;
-        border-style:inset;
-        border-radius: 8px; 
-        cursor: pointer;
-        top:10%;
-        left:35%;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-        font-size: x-large;
-        padding: 1rem;
-       
-        }
-        .reviewInformation u{
+       }#whiteBackgroundOfReview{
+            top: 4cm;
+            position: relative;
+            overflow: visible;
+            width: 100%;
+            height: auto;   
+            left:0;
+            background-color: white;
+            flex-wrap: wrap;            
+            display: flex;
+            gap: 1rem; 
+            padding: 1rem;
+            flex-direction: column;  
+            margin-top: 0;
+       }.reviewInformation {
+            font-size: 16px;
+            color: black;
+            flex-direction: row;
+            line-height: 0.4cm;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        }.boxInReviewPage{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            height: 15cm;
+            width: 10cm;
+            background-color: rgb(204, 153, 102,0.3);
+            border: 1px;
+            border-style:inset;
+            border-radius: 8px; 
+            cursor: pointer;
+            top:10%;
+            left:35%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            font-size: x-large;
+            padding: 1rem;
+        }.reviewInformation u{
             position: absolute;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             font-size: large;
-        }
-        #selectedImage{
+        }#selectedImage{
             width: 5cm;
             height: 3cm;
-        }
-        #showReservation{
+        }#showReservation{
             background-color: white;
             color: black;
-
-        }
-        #showReservation h1{
+        }#showReservation h1{
             position: relative;
             font-size: medium;
             top:0;
             left: 0.5cm;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-        }
-        .reservationBox {
+        }.reservationBox {
             display: flex;
             position: relative;
             flex-direction: column;
@@ -640,31 +570,259 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
             font-size: small;
             top: 0.2cm;
-        }
-        .reservationBox h3{
+        }.reservationBox h3{
             font-weight: 300;
-        }
-        .reservationDetails{
+        }.reservationDetails{
             margin-top: 0.5cm;
             background-color: white;
             width: 80%;
             height:auto;
             padding: 0.5cm;
             border-radius: 10px;
-        }
-        input::placeholder {
+        }input::placeholder {
             font-size: large;
             color: black;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 
-        }
-        .selectButton.selected {
+        }.selectButton.selected {
             background-color: #ff9900;
             color: white;
             outline: none;
         }
+        @media (max-width: 768px) {
+            .logoImage{
+            position: absolute;
+            left: 10px;
+            top:1px;
+            width: 20%;
+            }
+            .title {
+                flex-direction: column; 
+                padding: 1rem;
+            }
+            .boxInFirstStep {
+                width: calc(100% - 2rem) !important;
+                margin: 0 auto;
+                flex-direction: column !important;
+                gap: 0.1rem;
+            }
+            .locationSelectionBoxInFirstStepBox, .dateSelectionBoxInFirstStepBox {
+                text-align: center; 
+            }
+            .locationSelectionBoxInFirstStepBox select,
+            .dateSelectionBoxInFirstStepBox input {
+                width: 100% !important; 
+                max-width: 300px;
+                box-sizing: border-box; 
+            }
+            .dateSelectionBoxInFirstStepBox div {
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+            }
+            .menuButton {
+                font-size: 0.9rem;
+                width: 18%;
+            }
+            input, select {
+                font-size: 0.9rem;
+            }
+            .filterSection {
+                flex-direction: column;
+                display: flex;
+            }
+
+            .brandFilter, .transmissionFilter {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stepper {
+                flex-direction: column;
+                height: 90%;
+                width: 40%;
+            }
+            .stepBox {
+                flex: 1; 
+                max-width: 150px; 
+                padding: 0.5rem; 
+                text-align: center; 
+                background-color: rgb(203, 163, 123); 
+                border-radius: 5px; 
+                font-size: 0.8rem; 
+                box-sizing: border-box; 
+                white-space: nowrap; 
+                overflow: hidden; 
+                text-overflow: ellipsis; 
+            }
+            .carBox {
+                width: 100%;
+            }
+            .daterangepicker {
+                width: 90% !important; 
+                max-width: 400px; 
+                font-size: 0.8rem; 
+                padding: 0.5rem; 
                 
-        </style>
+            }
+            .daterangepicker .drp-calendar {
+                width: 45% !important; 
+            }
+            .daterangepicker .ranges {
+                font-size: 0.9rem; 
+            }
+            .daterangepicker .applyBtn, .daterangepicker .cancelBtn {
+                font-size: 0.8rem; 
+                padding: 0.3rem 0.6rem; 
+            }
+            .carBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #e6e6e6;
+                width: 100%; 
+                max-width: 350px; 
+                padding: 0.5rem; 
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                margin: 0.5rem auto; 
+                gap:0;
+            }
+            .carBox img {
+                width: 50%; 
+                max-width: 200px; 
+                height: auto; 
+                border-radius: 8px;
+            }
+            .carInformation {
+                flex-direction: column;
+                text-align: center;
+                font-size: 0.7rem; 
+                margin-top: 0.1rem; 
+                gap: 0.2rem;     
+            }
+            .carPrice {
+                font-size: 1rem; 
+                margin-top: 0.5rem;
+            }
+            .selectButton {
+                width: 70%;
+                height: 10%;
+                padding: 0.3rem 0.4rem; 
+                font-size: 0.8rem; 
+                background-color: rgb(203, 163, 123);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .car-selection-back-button, .car-selection-next-button{
+                width: 15%;
+                font-size: medium;
+            }
+            .forSmallScreenFilterSection{
+                display: flex;
+                position: relative;
+                width: 50%;
+                height: 10%;
+                flex-direction: column;
+                align-items: center;
+                left: 5%;
+            }
+            .brandFilter{
+                width: 45%; 
+                margin: 0 auto; 
+                left: 33%;
+                font-size: small;
+            }
+            #brandFilter{
+                width: 100%;
+                left: 30%;
+
+            }
+            .transmissionFilter{
+                width: 45%; 
+                margin: 0 auto; 
+                left: 90%;
+                font-size: small;
+            }
+            #transmissionFilter{
+                width: 100%;
+            }
+            .extrasPage{
+                gap:1rem;
+                display: flex; 
+                flex-direction: column;
+            }
+            .box1, .box2, .box3{
+                width: 100%;
+                height: auto;
+                background-color:white;
+                left:-19%;
+                position: relative;
+                margin-bottom: -70%;
+            }
+            .back-button-in-extras{
+                top:5%;
+                position: absolute;
+                margin-top: 46%;
+                width: 3cm;
+                left: 1%;
+            }
+            .next-button-in-extras{
+                top:5%;
+                position: absolute;
+                margin-top: 46%;
+                width: 3cm;
+                left: 80%;
+            }
+            #extrasPage{
+                flex-direction: column;
+            
+            }
+            #extrasPage h2{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:xx-large;
+                font-weight: 400;
+                margin-left:0;
+            }
+            #totalPriceBox h2{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:small;
+                font-weight: 400;
+                margin-left:0;
+                top:0;
+                position: absolute;
+            }
+            .totalPriceBox p {
+            font-size: small;
+            margin: 0;
+            font-weight: 400;
+            }
+            .totalPriceBox{
+                margin-top:35%;
+                width: 20%;
+                height: 10%;
+                left: 80%;
+            }
+            .boxInReviewPage{
+                left:-10px;
+                width: 100%;
+            }
+            .back-button-in-review{
+                bottom:2%;
+                left:5%;
+                width: 20%;
+                font-size: medium;
+            }
+            .complete-reservation-button{
+                bottom:-10px;
+                left:60%;
+                width: 30%;
+                font-size: medium;
+            }
+        }
+        
+    </style>
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
@@ -684,8 +842,9 @@
                 <div class="dateSelectionBoxInFirstStepBox" id="dateSelectionBoxInFirstStepBox">
                     <label for="dateSelection">Pick up date</label>
                     <div>
-                        <input type="text" name="daterange" id="daterangeInput" placeholder="Select Date Range">
                         <img src="https://img.icons8.com/?size=100&id=23&format=png&color=000000" style="float:inline-start" width="30" height="30">
+
+                        <input type="text" name="daterange" id="daterangeInput" placeholder="Select Date Range">
                     </div>                    
 
                 </div>
@@ -695,6 +854,7 @@
             
             <div id="carContainer" class="whiteBackgroundOfCarTables" style="display: none;">  
                 <div class="filterSection" id="filterSection">
+                    <div class="forSmallScreenFilterSection">
                     <div class="brandFilter">
                         <label for="brandFilter"></label>
                         <select id="brandFilter" onchange="filterCars()" >
@@ -718,8 +878,11 @@
                         <option value="Automatic">Automatic</option>
                     </select>
                 </div>
-                <button class="car-selection-back-button" onclick="switchStep(1)">Back</button>
-                <button class="car-selection-next-button" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}')">Next</button>
+                </div>
+                <div class="buttonSection">
+                    <button class="car-selection-back-button" onclick="switchStep(1)">Back</button>
+                    <button class="car-selection-next-button" onclick="handleSelection('${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}')">Next</button>
+                </div>
                 <div id="noCarMessage" class="noCarMessage" style="display: none;">
                     There are no cars with the desired specifications. Please try different filters.
                 </div>
@@ -728,7 +891,7 @@
 
         </div>         
         <div class="white">
-            <img class="logoImage" src="./images/Logo.webp" alt="logo of car" style="width: 8%;height:100%;">
+            <img class="logoImage" src="./images/Logo.webp" alt="logo of car">
                 <button type="button" class="menuButton" onclick="openNav()">My reservations</button>
                 <div class="sideNavigation" id="sideNavigation">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNavigation()">&times;</a>
@@ -738,7 +901,6 @@
                             </div>
                     </div>
             </div>
-
 
             <div class="stepper">
                 <div class="stepBox" id="step1">
@@ -851,7 +1013,7 @@
                 resetStep1();
                 }else if (stepNumber === 2 && selectedButtonId) {
                     document.getElementById("carContainer").style.display = "block";
-                    document.getElementById("filterSection").style.display = "block";
+                    document.getElementById("filterSection").style.display = "flex";
                     const brandSelect = document.getElementById("brandFilter");
                     const transmissionSelect = document.getElementById("transmissionFilter");
                     brandSelect.value = "All";
@@ -1149,7 +1311,6 @@
                                 extrasPage.appendChild(extrasBox);
                             })
                         }
-                        
                     else {
                         console.error("Failed to fetch extras:", response.statusText);
                     }
@@ -1162,7 +1323,6 @@
                 var username = sessionStorage.getItem("username");
                 console.log(username);
                 const locationValue = document.getElementById("locationSelection").value;
-
 
                 boxInReviewPage.innerHTML = ` 
                     <div class="reviewInformation" id="reviewInformation"> 
@@ -1272,6 +1432,11 @@
             switchStep(1);
         </script>
         
+    
+               
+               
             
+    
+    
        
     

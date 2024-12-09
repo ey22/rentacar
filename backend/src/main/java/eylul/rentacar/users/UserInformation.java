@@ -1,19 +1,23 @@
-package eylul.rentacar;
+package eylul.rentacar.users;
 
 import jakarta.persistence.*;
+//Represent detailed information about users
 
 @Entity
-@Table(name="user_information")
+@Table(name="user_information") //Name of table in database
 
 public class UserInformation {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
+        //Unique identifier for the user
         private Long Id;
-        @Column(name = "name")
-        private String name;
 
+        //Other information
+        @Column(name = "name") //Column name in the table
+        private String name;
         private String password;
 
+        //Constructors
         public UserInformation(){
         }
 
@@ -22,6 +26,7 @@ public class UserInformation {
                 this.password=password;
         }
 
+        //Getters and Setters
         public Long getId(){
                 return Id;
         }

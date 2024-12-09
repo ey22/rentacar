@@ -1,31 +1,37 @@
 package eylul.rentacar.reservations;
-import eylul.rentacar.Car.CarInformation;
+import eylul.rentacar.car.CarInformation;
 import eylul.rentacar.protectionplans.PlansInformation;
 import jakarta.persistence.*;
 
 import java.util.Date;
-
+//Represent detailed information about reservations
 @Entity
-@Table(name="reservation_information")
+@Table(name="reservation_information") //Name of table in database
 
 public class ReservationInformation {
+    //Unique identifier for the reservation
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservationId;
-
+    //Other information
     @Column(nullable = false)
     private int userId;
 
     @Column(nullable = false)
     private int carId;
 
-    @ManyToOne
+    //Represent the relationship between a reservation and a car
+    @ManyToOne //Many reservations can be associated with one car
+    //Specifies the foreign key column in the database ("carId")
+    //Nullable: Ensures that every reservation must be linked to a car (non-null)
+    //Insertable and updatable: Prevents changes to this foreign key after the record is created
     @JoinColumn(name = "carId", referencedColumnName = "id", nullable = false, insertable=false, updatable=false)
     private CarInformation car;
 
     @ManyToOne
+    //Specifies the foreign key column in the database ("protectionId")
     @JoinColumn(name = "protectionId", referencedColumnName = "id", insertable = false, updatable = false)
-    private PlansInformation plansInformation; // Many-to-One ilişki
+    private PlansInformation plansInformation;
 
     private Integer protectionId;
 
@@ -52,6 +58,7 @@ public class ReservationInformation {
         this.totalPrice=totalPrice;
     }
 
+    //Getters and Setters
     public Long getReservationId() {
         return reservationId;
     }
@@ -71,9 +78,11 @@ public class ReservationInformation {
     public CarInformation getCar() {
         return car;
     }
+
     public void setCar(CarInformation car) {
         this.car = car;
     }
+
     public PlansInformation getPlansInformation() {
         return plansInformation;
     }

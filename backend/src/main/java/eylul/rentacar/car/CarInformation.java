@@ -1,16 +1,17 @@
-package eylul.rentacar.Car;
+package eylul.rentacar.car;
 import jakarta.persistence.*;
-
+//Represent detailed information about cars
 @Entity
-@Table(name="car_information")
+@Table(name="car_information") //Name of table in database
 public class CarInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Unique identifier for the car
     private Long id;
-
+    //Other information
     private String name;
     private String brand;
-    @Column(name = "transmission_type")
+    @Column(name = "transmission_type") //Column name in the table
     private String transmissionType;
     @Column(name = "fuel_type")
     private String fuelType;
@@ -18,6 +19,7 @@ public class CarInformation {
     @Column(name = "image_url")
     private String imageUrl;
 
+    //Getters and Setters
     public Long getId() {
         return id;
     }

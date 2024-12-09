@@ -1,13 +1,12 @@
 package eylul.rentacar.reservations;
 
-import eylul.rentacar.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
-
+//This class acts as a bridge between the ReservationController and ReservationRepository
 @Service
 public class ReservationService {
     @Autowired
@@ -17,22 +16,20 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
+    //Retrieve all reservations from the database, return list
     public List<ReservationInformation> getAllReservations() {
         return reservationRepository.findAll();
     }
 
+    //Retrieve a reservation by its unique ID
     public ReservationInformation getReservationById(Long id) {
         return reservationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Reservation not found with ID: " + id));
     }
 
-    /*public List<ReservationInformation> getReservationsByUserId(Long userId) {
-        return reservationRepository.findByUserId(userId);
-    }*/
-
+    //Retrieve a reservation by user's unique ID
     public List<ReservationDetailsDto> getReservationsByUserId(Long userId) {
         List<ReservationInformation> reservations = reservationRepository.findByUserId(userId);
-
         return reservations.stream().map(reservation -> {
             ReservationDetailsDto dto = new ReservationDetailsDto();
             dto.setReservationId(reservation.getReservationId());
@@ -42,11 +39,9 @@ public class ReservationService {
             dto.setPickUpDate(new SimpleDateFormat("MM-dd-yyyy").format(reservation.getPickUpDate()));
             dto.setReturnDate(new SimpleDateFormat("MM-dd-yyyy").format(reservation.getReturnDate()));
             dto.setTotalPrice(reservation.getTotalPrice());
-
             return dto;
         }).collect(Collectors.toList());
     }
-
 
     public ReservationInformation createReservation(ReservationInformation reservation) {
         return reservationRepository.save(reservation);
