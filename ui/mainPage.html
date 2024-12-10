@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <!-- Ensures proper rendering and touch zooming on mobile devices -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <style>
             /* UI styles */
             img{
@@ -12,15 +12,13 @@
                 left: 1%;
                 width: 65%;
                 height: 80%;
-            }
-            .logoImage{
+            }.logoImage{
                 position: absolute;
                 left: 10px;
                 top:1px;
                 width: 8%;
                 height: 100%;
-            }
-            .title{
+            }.title{
                 position: absolute;
                 background-color: rgb(204, 153, 102,0.3);
                 color:black;
@@ -29,8 +27,7 @@
                 height: 100%;
                 top:10px;
                 align-items: center;
-            } 
-            .white{
+            }.white{
                 position: absolute;
                 background-color: white;
                 width: 100%; 
@@ -41,8 +38,7 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 20px;
-            }
-            .login-signin-container{
+            }.login-signin-container{
                 position: relative;
                 height: 2cm;
                 width: 5cm;
@@ -59,8 +55,7 @@
                 align-items: center;
                 justify-content: center;
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
-            .dropdown{
+            }.dropdown{
                 position: absolute;
                 top: 100%; 
                 left: 0;
@@ -72,19 +67,16 @@
                 opacity: 0; 
                 transform: translateY(-10px); 
                 transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .login-signin-container:hover .dropdown{
+            }.login-signin-container:hover .dropdown{
                 opacity: 1;
                 transform: translateY(0);
-            }
-            .login-signin-button{
+            }.login-signin-button{
                 width: 5cm;
                 height: 2cm;
                 background-color: rgba(204, 153, 102,0.3);
                 font-size: large;
                 font-weight: 600;            
-            }
-            h2{
+            }h2{
                 position: absolute;
                 font-size: 3.5em;
                 font-weight:700;
@@ -101,21 +93,17 @@
             img{
                 width: 110%;
                 height: 30%;
-            }
-            .logoImage{
+            }.logoImage{
                 width: 30%;
-            }
-            .title{
+            }.title{
                 width: 110%;
                 height: 100%;
-            }
-            h2{
+            }h2{
                 top:55%;
                 left:25%;
                 font-size: x-large;
                 width: 100%;
-            }
-            .login-signin-container{
+            }.login-signin-container{
                 right: 4%;
                 width: 30%;
                 height: 40%;
@@ -145,16 +133,17 @@
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
+        <!--Added photo-->
        <img src= "./images/Main Photo.webp" alt="car photo"> 
        <div class="title"> 
         <h2>BOOK AND<br> DRIVE,<br>FEEL ALIVE!</h2>
         </div>
-
         <div class="white">
             <h1></h1>
             <img class="logoImage" src="./images/Logo.webp" alt="logo of car">
             <div class="login-signin-container">Log in/Sign in
             <div class="dropdown">
+                <!--Buttons for login and signin-->
                 <button class="login-signin-button" type="button" onclick="window.location.href='LoginPage.html';" >Log in</button>
                 <button class="login-signin-button" type="button" onclick="window.location.href='SigninPage.html';" >Sign in</button>
             </div>

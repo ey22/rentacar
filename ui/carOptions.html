@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Font Awesome CSS for adding icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Specifies the character encoding for the document -->
         <meta charset="UTF-8">
+        <!-- Ensures proper rendering and touch zooming on mobile devices -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- jQuery library for handling JavaScript functionalities -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <!-- Daterangepicker CSS for styling the date picker -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
         <style>
+        /* General styles for the website's layout and design */
         .logoImage{
             position: absolute;
             left: 10px;
@@ -24,8 +30,7 @@
             width: 100%; 
             min-height: 100vh;
             height: auto;
-            align-items: center;
-            
+            align-items: center;  
         }.white{
             position: absolute;
             background-color: white;
@@ -70,8 +75,7 @@
             top: 0;
             z-index: 1;
             align-items: center;
-        }
-        .sideNavigation a{
+        }.sideNavigation a{
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 35px;
@@ -165,8 +169,7 @@
             margin-top:1cm;
             margin-bottom: 5rem; 
             flex-wrap: wrap;
-        }
-        .car-selection-next-button{
+        }.car-selection-next-button{
             position: absolute;
             width: 4cm;
             height: 1cm;
@@ -320,7 +323,7 @@
             align-items: flex-start; 
             gap: 0.5rem;
             width: 50%; 
-        }#dateSelectionButton {
+        }#dateSelectionButton { /*button style*/
             display: flex;
             align-items: center; 
             padding: 0.5rem;
@@ -362,7 +365,6 @@
             border-style:inset;
             border-radius: 10px; 
             cursor: pointer;
-
         }#extrasPage{
             flex-direction: column;
             display: flex;
@@ -589,60 +591,48 @@
             color: white;
             outline: none;
         }
+        /* Responsive styles for devices with a maximum width of 768px */
         @media (max-width: 768px) {
             .logoImage{
             position: absolute;
             left: 10px;
             top:1px;
             width: 20%;
-            }
-            .title {
+            }.title {
                 flex-direction: column; 
                 padding: 1rem;
-            }
-            .boxInFirstStep {
+            }.boxInFirstStep {
                 width: calc(100% - 2rem) !important;
                 margin: 0 auto;
                 flex-direction: column !important;
                 gap: 0.1rem;
-            }
-            .locationSelectionBoxInFirstStepBox, .dateSelectionBoxInFirstStepBox {
+            }.locationSelectionBoxInFirstStepBox, .dateSelectionBoxInFirstStepBox {
                 text-align: center; 
-            }
-            .locationSelectionBoxInFirstStepBox select,
+            }.locationSelectionBoxInFirstStepBox select,
             .dateSelectionBoxInFirstStepBox input {
                 width: 100% !important; 
                 max-width: 300px;
                 box-sizing: border-box; 
-            }
-            .dateSelectionBoxInFirstStepBox div {
+            }.dateSelectionBoxInFirstStepBox div {
                 display: flex; 
                 align-items: center; 
                 gap: 0.5rem; 
-            }
-            .menuButton {
+            }.menuButton {
                 font-size: 0.9rem;
                 width: 18%;
-            }
-            input, select {
+            }input, select {
                 font-size: 0.9rem;
-            }
-            .filterSection {
+            }.filterSection {
                 flex-direction: column;
                 display: flex;
-            }
-
-            .brandFilter, .transmissionFilter {
+            }.brandFilter, .transmissionFilter {
                 width: 100%;
                 justify-content: center;
-            }
-
-            .stepper {
+            }.stepper {
                 flex-direction: column;
                 height: 90%;
                 width: 40%;
-            }
-            .stepBox {
+            }.stepBox {
                 flex: 1; 
                 max-width: 150px; 
                 padding: 0.5rem; 
@@ -654,28 +644,22 @@
                 white-space: nowrap; 
                 overflow: hidden; 
                 text-overflow: ellipsis; 
-            }
-            .carBox {
+            }.carBox {
                 width: 100%;
-            }
-            .daterangepicker {
+            }.daterangepicker {
                 width: 90% !important; 
                 max-width: 400px; 
                 font-size: 0.8rem; 
                 padding: 0.5rem; 
                 
-            }
-            .daterangepicker .drp-calendar {
+            }.daterangepicker .drp-calendar {
                 width: 45% !important; 
-            }
-            .daterangepicker .ranges {
+            }.daterangepicker .ranges {
                 font-size: 0.9rem; 
-            }
-            .daterangepicker .applyBtn, .daterangepicker .cancelBtn {
+            }.daterangepicker .applyBtn, .daterangepicker .cancelBtn {
                 font-size: 0.8rem; 
                 padding: 0.3rem 0.6rem; 
-            }
-            .carBox {
+            }.carBox {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -687,25 +671,21 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 margin: 0.5rem auto; 
                 gap:0;
-            }
-            .carBox img {
+            }.carBox img {
                 width: 50%; 
                 max-width: 200px; 
                 height: auto; 
                 border-radius: 8px;
-            }
-            .carInformation {
+            }.carInformation {
                 flex-direction: column;
                 text-align: center;
                 font-size: 0.7rem; 
                 margin-top: 0.1rem; 
                 gap: 0.2rem;     
-            }
-            .carPrice {
+            }.carPrice {
                 font-size: 1rem; 
                 margin-top: 0.5rem;
-            }
-            .selectButton {
+            }.selectButton {
                 width: 70%;
                 height: 10%;
                 padding: 0.3rem 0.4rem; 
@@ -714,12 +694,10 @@
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-            }
-            .car-selection-back-button, .car-selection-next-button{
+            }.car-selection-back-button, .car-selection-next-button{
                 width: 15%;
                 font-size: medium;
-            }
-            .forSmallScreenFilterSection{
+            }.forSmallScreenFilterSection{
                 display: flex;
                 position: relative;
                 width: 50%;
@@ -727,105 +705,89 @@
                 flex-direction: column;
                 align-items: center;
                 left: 5%;
-            }
-            .brandFilter{
+            }.brandFilter{
                 width: 45%; 
                 margin: 0 auto; 
-                left: 33%;
+                left: 30%;
                 font-size: small;
-            }
-            #brandFilter{
+            }#brandFilter{
                 width: 100%;
                 left: 30%;
 
-            }
-            .transmissionFilter{
+            }.transmissionFilter{
                 width: 45%; 
                 margin: 0 auto; 
-                left: 90%;
+                left: 95%;
                 font-size: small;
-            }
-            #transmissionFilter{
+            }#transmissionFilter{
                 width: 100%;
-            }
-            .extrasPage{
+            }.extrasPage{
                 gap:1rem;
                 display: flex; 
                 flex-direction: column;
-            }
-            .box1, .box2, .box3{
+            }.box1, .box2, .box3{
                 width: 100%;
                 height: auto;
                 background-color:white;
                 left:-19%;
                 position: relative;
-                margin-bottom: -70%;
-            }
-            .back-button-in-extras{
+                margin-bottom: -75%;
+            }.back-button-in-extras{
                 top:5%;
                 position: absolute;
-                margin-top: 46%;
+                margin-top: 45%;
                 width: 3cm;
                 left: 1%;
-            }
-            .next-button-in-extras{
+            }.next-button-in-extras{
                 top:5%;
                 position: absolute;
-                margin-top: 46%;
+                margin-top: 45%;
                 width: 3cm;
                 left: 80%;
-            }
-            #extrasPage{
+            }#extrasPage{
                 flex-direction: column;
             
-            }
-            #extrasPage h2{
+            }#extrasPage h2{
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-size:xx-large;
                 font-weight: 400;
                 margin-left:0;
-            }
-            #totalPriceBox h2{
+            }#totalPriceBox h2{
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-size:small;
                 font-weight: 400;
                 margin-left:0;
                 top:0;
                 position: absolute;
-            }
-            .totalPriceBox p {
-            font-size: small;
-            margin: 0;
-            font-weight: 400;
-            }
-            .totalPriceBox{
+            }.totalPriceBox p {
+                font-size: small;
+                margin: 0;
+                font-weight: 400;
+            }.totalPriceBox{
                 margin-top:35%;
                 width: 20%;
                 height: 10%;
                 left: 80%;
-            }
-            .boxInReviewPage{
+            }.boxInReviewPage{
                 left:-10px;
                 width: 100%;
-            }
-            .back-button-in-review{
+            }.back-button-in-review{
                 bottom:2%;
                 left:5%;
                 width: 20%;
                 font-size: medium;
-            }
-            .complete-reservation-button{
+            }.complete-reservation-button{
                 bottom:-10px;
                 left:60%;
                 width: 30%;
                 font-size: medium;
             }
         }
-        
     </style>
         <link rel="icon" href="images/car_icon.png">
     </head>
     <body>
+        <!--Page design with some boxes, colors and shapes-->
         <div class="title">
             <div class="boxInFirstStep" id="boxInFirstStep"> 
                 <div class="locationSelectionBoxInFirstStepBox">
@@ -838,35 +800,35 @@
                         <option value="Roma">📍 Roma</option>
                     </select>
                 </div>
-         
+        
                 <div class="dateSelectionBoxInFirstStepBox" id="dateSelectionBoxInFirstStepBox">
                     <label for="dateSelection">Pick up date</label>
                     <div>
+                        <!--Some images for good-looking website-->
                         <img src="https://img.icons8.com/?size=100&id=23&format=png&color=000000" style="float:inline-start" width="30" height="30">
-
                         <input type="text" name="daterange" id="daterangeInput" placeholder="Select Date Range">
                     </div>                    
-
                 </div>
+                <!--User interaction with button-->
                     <button class="next-button" type="button" onclick="handleLocationSelection()">Next</button>
                 </div>                        
             </div>
-            
+            <!--User can filter cars-->
             <div id="carContainer" class="whiteBackgroundOfCarTables" style="display: none;">  
                 <div class="filterSection" id="filterSection">
                     <div class="forSmallScreenFilterSection">
-                    <div class="brandFilter">
-                        <label for="brandFilter"></label>
-                        <select id="brandFilter" onchange="filterCars()" >
-                            <option value="" selected disabled>Brand</option>
-                            <option value="All" selected>All Brands </option>
-                            <option value="Audi">Audi</option>
-                            <option value="Peugeot">Peugeot</option>
-                            <option value="Volkswagen">Volkswagen</option>
-                            <option value="Ford">Ford</option>
-                            <option value="Volvo">Volvo</option>
-                            <option value="Mercedes">Mercedes</option>
-                        </select>
+                        <div class="brandFilter">
+                            <label for="brandFilter"></label>
+                            <select id="brandFilter" onchange="filterCars()" >
+                                <option value="" selected disabled>Brand</option>
+                                <option value="All" selected>All Brands </option>
+                                <option value="Audi">Audi</option>
+                                <option value="Peugeot">Peugeot</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Volvo">Volvo</option>
+                                <option value="Mercedes">Mercedes</option>
+                            </select>
                     </div>
     
                 <div class="transmissionFilter">
@@ -930,22 +892,21 @@
                 </div>
                 <button class="back-button-in-review" onclick="switchStep(3)">Back</button>
                <script>
+                //Id should be stored for next steps
                 var userId = sessionStorage.getItem("userId");
-                console.log("id is" + userId);
                </script>
                 <button class="complete-reservation-button" id="complete-reservation-button" onclick="alert('Your reservation is successfully completed!'); postReservation(); switchStep(1);"> Complete the reservation</button>
             </div>
         </div>
         
-        
         <script>
-        function resetStep1() {
-            const dateRangeInput = document.getElementById("daterangeInput");
-            $(dateRangeInput).val(''); // Input alanını temizle
-            selectedPickUpDate = null;
-            selectedReturnDate = null;
-        }
-
+            //Some functions for a flow in order
+            function resetStep1() {
+                const dateRangeInput = document.getElementById("daterangeInput");
+                $(dateRangeInput).val(''); 
+                selectedPickUpDate = "";
+                selectedReturnDate = "";
+            }
             function openNav(){
                 document.getElementById("sideNavigation").style.width = "400px";  
                 showReservation();
@@ -956,9 +917,9 @@
             var days;
             var selectedPickUpDate;
             var selectedReturnDate;
+            //Adding calendar to select date range
             document.addEventListener("DOMContentLoaded", function () {
             const dateRangeInput = document.getElementById("daterangeInput");
-
             const today = new Date();
             const tomorrow = new Date(today);
             tomorrow.setDate(today.getDate() + 1); 
@@ -970,28 +931,24 @@
                 autoUpdateInput: false,
                 minDate: moment(tomorrow).format('MM/DD/YYYY') 
             });
-    
             $(dateRangeInput).on('apply.daterangepicker', function (ev, picker) {
                 days = picker.endDate.diff(picker.startDate, 'days') + 1; 
                 selectedPickUpDate = picker.startDate.format('MM/DD/YYYY');
                 selectedReturnDate = picker.endDate.format('MM/DD/YYYY')
                 console.log("x:" + days);
-
                 $(this).val(`${picker.startDate.format('MM/DD/YYYY')} - ${picker.endDate.format('MM/DD/YYYY')}`);
                 
             });
         });
-            
             function handleLocationSelection() {
                 const location = document.getElementById("locationSelection").value;
                 if (location) {
                     switchStep(2);
-                }
-                else{
+                }else{
                     alert("Please select a location!");
                 }
             }
-
+            //Switch between steps to show diffent design in one page
             async function switchStep(stepNumber) {
                 const stepBoxes = document.querySelectorAll(".stepBox");
                 stepBoxes.forEach(box => box.classList.remove("active"));
@@ -1010,8 +967,16 @@
                     document.getElementById("step2").innerHTML = `
                     Step 2: Car Selection
                 `;
+                    document.getElementById("step3").innerHTML = `
+                        Step 3: Extras
+                `;
                 resetStep1();
                 }else if (stepNumber === 2 && selectedButtonId) {
+                    if (!selectedPickUpDate || !selectedReturnDate) {
+                        alert("Please select date!");
+                        switchStep(1);
+                        return;
+                    }
                     document.getElementById("carContainer").style.display = "block";
                     document.getElementById("filterSection").style.display = "flex";
                     const brandSelect = document.getElementById("brandFilter");
@@ -1019,15 +984,12 @@
                     brandSelect.value = "All";
                     transmissionSelect.value = "All";
                     await loadCars();
-                    console.log(selectedButtonId);
                     const selectedButton = document.getElementById(selectedButtonId);
                     selectedButton.classList.add("selected");
                     document.getElementById("step3").innerHTML = `
                     Step 3: Extras
                 `;
-
                 } else if (stepNumber === 2) {
-                    console.log(locationSelection);
                     if (!selectedPickUpDate || !selectedReturnDate) {
                         alert("Please select date!");
                         switchStep(1);
@@ -1064,17 +1026,15 @@
                     document.getElementById("whiteBackgroundOfReview").style.display = "block"; 
                 }
             }
-
             var varPrice=0;
             async function filterCars() {
                 const brand = document.getElementById("brandFilter").value || "All";;
                 const transmission = document.getElementById("transmissionFilter").value || "All";;
-            
             try {
+                //Fetch to the API. Because data is necessary from database
                 const response = await fetch(`http://localhost:8080/cars/filter?brand=${encodeURIComponent(brand)}&transmissionType=${encodeURIComponent(transmission)}`);
                 if (response.ok) {
                     const cars = await response.json();
-                    
                     const container = document.getElementById("carContainer");
                     const filterSection = container.querySelector(".filterSection");
                     container.innerHTML = "";
@@ -1082,14 +1042,12 @@
                     if (cars.length === 0) {
                         const noCarMessage = document.getElementById("noCarMessage");
                         noCarMessage.style.display = "block";
-                        
 
                     } else {
                         noCarMessage.style.display = "none"; 
                         cars.forEach(car => {
                             const carBox = document.createElement("div");
                             carBox.className = "carBox";
-            
                             carBox.innerHTML = `
                                 <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
                                 <div class="carInformation">
@@ -1100,7 +1058,7 @@
                                     </div>
                                     <div class="carPrice">
                                         <p>${car.price} €/day</p>
-                                    <button class="selectButton" id="selectButton-${car.id}" onclick="carChoice(this, '${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}')">SELECT</button>
+                                    <button class="selectButton" id="selectButton-${car.id}" onclick="carChoice(this, '${car.brand}', '${car.name}', '${car.price}', '${car.imageUrl}','${car.id}')">SELECT</button>
                                     </div>
                             `;
                             container.appendChild(carBox);
@@ -1113,25 +1071,21 @@
                 console.error("Error:", err);
             }
         }
-            
+            //Retrieve car data from database by API
             async function loadCars() {
                 if (document.getElementById("carContainer").style.display !== "block") {
                     return;
-                }
-                try {
+                }try {
                     const response = await fetch("http://localhost:8080/cars");
                     if (response.ok) {
                         const cars = await response.json();
-                        
                         const container = document.getElementById("carContainer");
                         const filterSection = container.querySelector(".filterSection");
                         container.innerHTML = "";
                         container.appendChild(filterSection);
-        
                             cars.forEach(car => {
                             const carBox = document.createElement("div");
                             carBox.className = "carBox";
-                            
                             carBox.innerHTML = `
                                 <img class="carImage" src="${car.imageUrl}" alt="${car.name}">
                                 <div class="carInformation">
@@ -1147,8 +1101,7 @@
                             `;
                             container.appendChild(carBox);
                         });
-                    } 
-                    else {
+                    }else {
                         console.error("", response.statusText);
                     }
                 }catch (err) {
@@ -1166,7 +1119,7 @@
 
             function carChoice(button, brand, name, price, image, id){
                 if (selectedButtonId && selectedButtonId !== button.id) {
-                const previousButton = document.getElementById(selectedButtonId);
+                    const previousButton = document.getElementById(selectedButtonId);
                 if (previousButton) {
                     console.log(previousButton);
                     console.log(button.id);
@@ -1181,7 +1134,6 @@
                 selectedImage=image;
                 selectedCarPrice=price;
                 carId=id;
-            
             }
             function handleSelection(brand, name, price, image){
                 varPrice=0;
@@ -1190,7 +1142,6 @@
                 selectCar(selectedCar);
                 calculatePrice(selectedCarPrice);
             }
-
             function selectCar(carName) {
                 selectedCar = carName; 
                 document.getElementById("step2").innerHTML = `
@@ -1199,15 +1150,14 @@
                 `;
                 switchStep(3); 
             }
-
             function calculatePrice(price){
                 varPrice+=price*days;
                 console.log(varPrice);
             }
-                var totalExtra=0;
-                var selectedExtraPrice=0;
-                var selectedExtraName="";
-                var protectionId=0;
+            var totalExtra=0;
+            var selectedExtraPrice=0;
+            var selectedExtraName="";
+            var protectionId=0;
 
             function calculateExraPrice(extraPrice,planType,id){
                 if(extraPrice==0){
@@ -1228,21 +1178,18 @@
                     totalPrice=varPrice+totalExtra;
                     const totalPriceElement = document.getElementById("totalPrice");
                     totalPriceElement.innerText = `${totalPrice} €`;
-
                     document.getElementById("step3").innerHTML = `
                     Step 3: Extras
                     <p>${planType}</p>
                 `;
                 }
-
+            // Retrieve protection plan data from database by API
             async function loadExtras(){
                 try {
                     const response = await fetch("http://localhost:8080/plans");
                     if (response.ok) {
                         const extras = await response.json();
-
                         const extrasPage = document.getElementById("extrasPage");
-                        
                         extrasPage.innerHTML = `
                             <h1>Protection Plans</h1>
                              <div class="totalPriceBox" id="totalPriceBox">
@@ -1275,7 +1222,7 @@
                                             boxContent+= ` 
                                             <div class="protectionPrice">
                                                 <p>Included</p>
-                                                <button autofocus class="selectButtonForProtection" id="basicProtectionButton" onclick="calculateExraPrice('${extra.price}','${extra.planType}')" onfocus="calculateExraPrice('${extra.price}','${extra.planType}', '${extra.id}')"> Select </button>
+                                                <button autofocus class="selectButtonForProtection" id="basicProtectionButton" onclick="calculateExraPrice('${extra.price}','${extra.planType}','${extra.id}')" onfocus="calculateExraPrice('${extra.price}','${extra.planType}', '${extra.id}')"> Select </button>
                                                  </div>
                                             `;
                                         }
@@ -1292,8 +1239,7 @@
                                                  </div>
                                         </p>
                                         `;
-                                }
-                                else{
+                                }else{
                                     boxContent+= `
                                      <p>
                                          <img src="https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000" alt="icon" class="icon">
@@ -1310,20 +1256,19 @@
                                 extrasBox.innerHTML = boxContent;
                                 extrasPage.appendChild(extrasBox);
                             })
-                        }
-                    else {
+                        }else {
                         console.error("Failed to fetch extras:", response.statusText);
                     }
                 } catch (err) {
                     console.error("Error:", err);
                 }
             };
+            //To show general information about user's choices 
             function loadReview(){
                 const boxInReviewPage = document.getElementById("boxInReviewPage");
                 var username = sessionStorage.getItem("username");
                 console.log(username);
                 const locationValue = document.getElementById("locationSelection").value;
-
                 boxInReviewPage.innerHTML = ` 
                     <div class="reviewInformation" id="reviewInformation"> 
                         <u><b> Driver</b></u>
@@ -1335,7 +1280,6 @@
                         <p> Pick Up Date: ${selectedPickUpDate}</p>
                         <p> Return Date: ${selectedReturnDate}</p>
                         <p> Protection Plan: ${selectedExtraName}</p>
-
                         <br>
                         <u><b> Vehicle</b></u>
                         <br>
@@ -1350,13 +1294,12 @@
                     </div>
                 `;
             }
-            
+            //User can also show old booking 
             async function showReservation(){
                 if (userId == "") {
                     console.error("User ID is missing!");
                     return;
-                }
-                try {
+                }try {
                     const response = await fetch(`http://localhost:8080/reservations/user/${userId}`);
                     if (response.ok) {
                         const reservations = await response.json();  
@@ -1386,21 +1329,15 @@
                             reservationBox.appendChild(reservationElement);
                         })
                      }
-                }
-                catch (err) {
+                }catch (err) {
                 console.error("Error:", err);
+                }
             }
-}
+            //Reservation is recorded
             async function postReservation(){
                 const pickUpDate = new Date(selectedPickUpDate);
-                console.log(pickUpDate);
                 const returnDate = new Date(selectedReturnDate);
-                console.log(returnDate);
                 const location= document.getElementById("locationSelection").value;
-                console.log(location);
-                console.log(protectionId);
-
-
                 try {
                     const response = await fetch('http://localhost:8080/reservations', {
                                 method: 'POST',
@@ -1421,8 +1358,7 @@
                     if (response.ok) {
                         console.log('Request successful!');       
                     }
-                }
-                 catch(err) {
+                }catch(err) {
                     console.error(`Error: ${err}`);
                 }
             }
