@@ -251,7 +251,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-style:inset;
-            
+            height: 100%;
         }.stepBox {
             flex: 1;
             text-align: center;
@@ -358,7 +358,7 @@
             float:left;
             width: 25%;
             height: 10cm;
-            margin-top: 8cm;
+            margin-top: 20%;
             margin-left: 2cm;
             background-color:white;
             border: 6px;
@@ -935,7 +935,6 @@
                 days = picker.endDate.diff(picker.startDate, 'days') + 1; 
                 selectedPickUpDate = picker.startDate.format('MM/DD/YYYY');
                 selectedReturnDate = picker.endDate.format('MM/DD/YYYY')
-                console.log("x:" + days);
                 $(this).val(`${picker.startDate.format('MM/DD/YYYY')} - ${picker.endDate.format('MM/DD/YYYY')}`);
                 
             });
@@ -1121,14 +1120,11 @@
                 if (selectedButtonId && selectedButtonId !== button.id) {
                     const previousButton = document.getElementById(selectedButtonId);
                 if (previousButton) {
-                    console.log(previousButton);
-                    console.log(button.id);
                     previousButton.classList.remove("selected");
                 }
             }
                 button.classList.add("selected");
                 selectedButtonId = button.id;
-                console.log("selectedButtonId" + selectedButtonId);
                 selectedBrand=brand;
                 selectedName=name;
                 selectedImage=image;
@@ -1137,7 +1133,6 @@
             }
             function handleSelection(brand, name, price, image){
                 varPrice=0;
-                console.log(selectedBrand);
                 const selectedCar = `${selectedBrand} ${selectedName}`;
                 selectCar(selectedCar);
                 calculatePrice(selectedCarPrice);
@@ -1174,7 +1169,6 @@
                     selectedExtraName=planType;
                     protectionId=id;
                     totalExtra+=selectedExtraPrice*days;
-                    console.log(totalExtra);
                     totalPrice=varPrice+totalExtra;
                     const totalPriceElement = document.getElementById("totalPrice");
                     totalPriceElement.innerText = `${totalPrice} €`;
@@ -1267,7 +1261,6 @@
             function loadReview(){
                 const boxInReviewPage = document.getElementById("boxInReviewPage");
                 var username = sessionStorage.getItem("username");
-                console.log(username);
                 const locationValue = document.getElementById("locationSelection").value;
                 boxInReviewPage.innerHTML = ` 
                     <div class="reviewInformation" id="reviewInformation"> 
@@ -1314,7 +1307,6 @@
                             reservationBox.appendChild(reservationElement);
                             return;
                         }     
-                        console.log("User ID:", userId);
                         reservations.forEach(reservation => {      
                             const reservationElement = document.createElement("div");
                             reservationElement.className = "reservationDetails";             
