@@ -9,7 +9,7 @@ Before starting, some tools are necessary to run this website.
 After clone GitHub repository:
 1. Set up database. Import the `rentacar_database.sql` file
    ```bash
-    cd database/rentacar_database.sql
+    cd database
     mysql -u root -p
     CREATE DATABASE RentaCar;
     USE RentaCar;
@@ -21,16 +21,18 @@ After clone GitHub repository:
    cd backend
    mvn spring-boot:run
    ```
-3. To run the API, `backend/src/main/eylul.rentacar/RentaCarApplication` program should be run
-4. Interact with ui
+3. To run the API, `backend/src/main/eylul.rentacar/RentaCarApplication` program must be run
+4. Interact with UI
    ```bash
-    cd ui/mainPage.html file on your computer and run it in you Firefox browser
+    cd ui
    ```
+   mainPage.html file must be run in your Firefox browser.
 5. You can use Postman to test the API points. For example GET method for reservations:
    ```bash
    http://localhost:8080/reservations/user/5
    ```
-6. Interact with the ui through your browser. You can start with signin if you don't have an account
-  
+6. Interact with the UI through your browser. You can start with signin if you don't have an account. Account for testing:
+  Username: `iu`
+Password:`computer`
 
 
